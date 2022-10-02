@@ -128,6 +128,5 @@ else
 // Console.Write(count);
 // Console.WriteLine("\"");
 
-                        // Домашняя работа
+                                            // Домашняя работа
 
-                        
