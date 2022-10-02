@@ -130,3 +130,17 @@ else
 
                                             // Домашняя работа
 
+//if (Nam%2=0)
+
+//Задача 2:
+//Напишите программу, которая на вход принимет два числа и выдает, Какое число больше, а какое меньше.
+            // Console.WriteLine("Введите первое число: ");
+            // int nam1 = int.Parse(Console.ReadLine()!);
+            // Console.WriteLine("Введите второе число: ");
+            // int nam2 = int.Parse(Console.ReadLine()!);
+            // if (nam1 > nam2){
+            //     Console.WriteLine($"{nam1} больше чила {nam2}");
+            // }
+            // else{
+            //     Console.WriteLine($"{nam2} больше числа {nam1}");
+            // }
