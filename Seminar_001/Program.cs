@@ -41,45 +41,53 @@ else
 // Console.WriteLine(Degree);
 
 //Задача 3 Программа на входе полкчает номер дня недели, а на выходе выводит название этого дня недели.
-Console.WriteLine("Введите нмер дня надели: ");
-int Nam = int.Parse(Console.ReadLine()!);
-if (Nam == 1)
-{
-    Console.WriteLine("Понедельник");
-}
-if (Nam == 2)
-{
-    Console.WriteLine("Вторник");
-}
-if (Nam == 3)
-{
-    Console.WriteLine("Среда");
-}
-if (Nam == 4)
-{
-    Console.WriteLine("Четверг");
-}
-if (Nam == 5)
-{
-    Console.WriteLine("Пятница");
-}
-if (Nam == 6)
-{
-    Console.WriteLine("Суббота");
-}
-if (Nam == 7)
-{
-    Console.WriteLine("Воскресенье");
-}
-if (Nam <= 0)
-{
-    Console.WriteLine("День недели может быть в диапазоне от 1 до 7. Введите верный номер дня недели.");
-}
-if (Nam >= 8)
-{
-    Console.WriteLine("День недели может быть в диапазоне от 1 до 7. Введите верный номер дня недели.");
-}
-// Можно сократить if (DayNum < 1 || DayNum > 7) 
+// Console.WriteLine("Введите нмер дня надели: ");
+// int Nam = int.Parse(Console.ReadLine()!);
+// if (Nam == 1)
+// {
+//     Console.WriteLine("Понедельник");
+// }
+// if (Nam == 2)
+// {
+//     Console.WriteLine("Вторник");
+// }
+// if (Nam == 3)
+// {
+//     Console.WriteLine("Среда");
+// }
+// if (Nam == 4)
+// {
+//     Console.WriteLine("Четверг");
+// }
+// if (Nam == 5)
+// {
+//     Console.WriteLine("Пятница");
+// }
+// if (Nam == 6)
+// {
+//     Console.WriteLine("Суббота");
+// }
+// if (Nam == 7)
+// {
+//     Console.WriteLine("Воскресенье");
+// }
+// if (Nam <= 0)
+// {
+//     Console.WriteLine("День недели может быть в диапазоне от 1 до 7. Введите верный номер дня недели.");
+// }
+// if (Nam >= 8)
+// {
+//     Console.WriteLine("День недели может быть в диапазоне от 1 до 7. Введите верный номер дня недели.");
+// }
+// // Можно сократить if (DayNum < 1 || DayNum > 7) 
+// Что бы не далать проверку через if , можно использовать switch () case, например:
+// switch (Nam)
+// {
+//     case 1: Console.WriteLine("Понедельник"); break;
+//     case 2: Console.WriteLine("Вторник"); break;
+//     case 3: Console.WriteLine("Среда"); break;
+// }
+
 
 
 // Напишите программу, которая на вход принимает одно число (N), 
