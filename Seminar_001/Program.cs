@@ -164,3 +164,13 @@ else
             //     max=nam3;
             // }
             // Console.WriteLine($"{max} максимальное из трех чсел");
+// Задача 6:
+//Напишите программу,которая на вход принимает число и выдает, является ил число чётным.
+            // Console.WriteLine("Введите число: ");
+            // int nam = int.Parse(Console.ReadLine()!);
+            // if(nam%2==0){
+            //     Console.WriteLine($"{nam} является ЧЁТНЫМ числом");
+            // }
+            // else{
+            //     Console.WriteLine($"{nam} являеьтя НЕ ЧЁТНЫМ числом");
+            // }          
