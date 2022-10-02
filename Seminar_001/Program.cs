@@ -128,7 +128,7 @@ else
 // Console.Write(count);
 // Console.WriteLine("\"");
 
-                                            // Домашняя работа
+                                                                    // Домашняя работа
 
 //if (Nam%2=0)
 
@@ -144,3 +144,23 @@ else
             // else{
             //     Console.WriteLine($"{nam2} больше числа {nam1}");
             // }
+//Задача 4:
+//Напишите программу, которая принимает на вход три числа и выдает максимальное из этих чисел.
+            // Console.WriteLine("Введите первое число: ");
+            // int nam1 = int.Parse(Console.ReadLine()!);
+            // Console.WriteLine("Введите второе число: ");
+            // int nam2 = int.Parse(Console.ReadLine()!);
+            // Console.WriteLine("Введите третье число: ");
+            // int nam3 = int.Parse(Console.ReadLine()!);
+
+            // int max = 0;
+            // if(nam1>nam2){
+            //     max=nam1;
+            // }
+            // else{
+            //     max=nam2;
+            // }
+            // if(nam1<nam3){
+            //     max=nam3;
+            // }
+            // Console.WriteLine($"{max} максимальное из трех чсел");
