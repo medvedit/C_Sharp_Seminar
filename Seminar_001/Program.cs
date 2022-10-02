@@ -173,4 +173,22 @@ else
             // }
             // else{
             //     Console.WriteLine($"{nam} являеьтя НЕ ЧЁТНЫМ числом");
-            // }          
+            // }
+//Задача 8:
+//Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от1 до (N).
+            // Console.WriteLine("Введите чётное число: ");
+            // int nam = int.Parse(Console.ReadLine()!);
+            // int count = 2;
+            // if (nam % 2 == 0)
+            // {
+            //     int even = nam;
+            //     while (count <= even)
+            //     {
+            //         Console.Write($"{count}, ");
+            //         count = count + 2;
+            //     }
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Вы ввели не чётное число, попробуйте ввести другое число: ");
+            // }       
