@@ -41,8 +41,8 @@ else
 // Console.WriteLine(Degree);
 
 //Задача 3 Программа на входе полкчает номер дня недели, а на выходе выводит название этого дня недели.
-// Console.WriteLine("Введите нмер дня надели: ");
-// int Nam = int.Parse(Console.ReadLine()!);
+//Console.WriteLine("Введите нмер дня надели: ");
+//int Nam = int.Parse(Console.ReadLine()!);
 // if (Nam == 1)
 // {
 //     Console.WriteLine("Понедельник");
@@ -83,9 +83,22 @@ else
 // Что бы не далать проверку через if , можно использовать switch () case, например:
 // switch (Nam)
 // {
-//     case 1: Console.WriteLine("Понедельник"); break;
-//     case 2: Console.WriteLine("Вторник"); break;
-//     case 3: Console.WriteLine("Среда"); break;
+//     case 1: Console.WriteLine("Понедельник");
+//             break;
+//     case 2: Console.WriteLine("Вторник");
+//             break;
+//     case 3: Console.WriteLine("Среда");
+//             break;
+//     case 4: Console.WriteLine("Четверг");
+//             break;
+//     case 5: Console.WriteLine("Пятница");
+//             break;
+//     case 6: Console.WriteLine("Суббота");
+//             break;
+//     case 7: Console.WriteLine("Воскресенье");
+//             break;
+//     default: Console.WriteLine("В неделе всего 7 дней )))");
+//             break;                                        
 // }
 
 
