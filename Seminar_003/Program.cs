@@ -112,7 +112,7 @@ Console.WriteLine("Введите пятизначное число: ");
 string nam = Console.ReadLine()!;
 if(nam.Length == 5)
 {
-    if(nam[0] == nam[4] || nam[2] == nam[3])
+    if(nam[0] == nam[4] && nam[2] == nam[3])
         Console.WriteLine($"Число {nam} является полиндромом!");
     else
     {
