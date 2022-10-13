@@ -8,21 +8,48 @@
 // 4 -> 10
 // 8 -> 36
 
-Console.WriteLine("Введите число: ");
-int A = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Сумма всех чисел от 1 до {A} = {GetSum(A)}");
+// Console.WriteLine("Введите число: ");
+// int A = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Сумма всех чисел от 1 до {A} = {GetSum(A)}");
 
-int GetSum (int limit)
-{
-    int sum = 0;
-    for (int i = 1; i <= limit; i++)
-    {
-       sum = sum + i; 
-    }
-    return sum;
-}
+// int GetSum (int limit)
+// {
+//     int sum = 0;
+//     for (int i = 1; i <= limit; i++)
+//     {
+//        sum = sum + i; 
+//     }
+//     return sum;
+// }
 
+// Задача №2 в классе.
 
+// Напишите программу, которая принимает на вход число 
+// и выдаёт количество цифр в числе.
+
+// 456 -> 3
+// 78 -> 2
+// 89126 -> 5
+
+// Вариант №1-------------------------------------------------------------------
+// Console.WriteLine("Введите число: ");
+// int A = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Число {A} состоит из {NumberDigit(A)} цифр");
+
+// int NumberDigit (int limit)
+// {
+//     char[] c = limit.ToString().ToCharArray(); // перевел из строки в массив
+//     int a = 0;
+//     for (int i = 0; i <= c.Length; i++)
+//     {
+//         a = i;
+//     }
+//     return a;
+// }
+
+// Вариант №2 ------------------------------------------------------------------
+//Console.WriteLine("введите число:");
+//Console.WriteLine($"чисел: {Console.ReadLine()!.Length}");
 
 
 // ---------------------------------------------------------------Домашняя работа-------------------------------------------------------------
