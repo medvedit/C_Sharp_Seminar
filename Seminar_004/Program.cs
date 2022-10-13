@@ -133,36 +133,36 @@
 
 
 // ПЕРВОЕ РЕШЕНИЕ !!!  ------------------------------------------
-// Console.WriteLine("Введите число а: ");
-// int a = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите число b: ");
-// int b = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите число а: ");
+int a = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите число b: ");
+int b = int.Parse(Console.ReadLine()!);
 
-// GetDegree(a,b);
+GettDegree(a,b);
 
-// void GetDegree(int x, int y)
-// {
-//     int result = Convert.ToInt32(Math.Pow(x, y));
-//     Console.WriteLine($"число {x} в степени {y} = {result}");
-// } 
+void GettDegree(int x, int y)
+{
+    int result = Convert.ToInt32(Math.Pow(x, y));
+    Console.WriteLine($"число {x} в степени {y} = {result}");
+} 
 
 
 
 
 //ВТОРОЕ РЕШЕНИЕ !!! --------------------------------------------
-// Console.WriteLine("Введите число а: ");
-// int a = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите число b: ");
-// int b = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите число а: ");
+int x = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите число b: ");
+int y = int.Parse(Console.ReadLine()!);
 
-// Console.WriteLine($"число {a} в степени {b} = {GetDegree(a,b)}");
+Console.WriteLine($"число {x} в степени {y} = {GetDegree(a,b)}");
 
 
-// int GetDegree (int x, int y)
-// {
-//     int result = Convert.ToInt32(Math.Pow(x, y));
-//     return result;
-// }
+int GetDegree (int x, int y)
+{
+    int result = Convert.ToInt32(Math.Pow(x, y));
+    return result;
+}
 
 // Задача 27:--------------------------
 // Напишите программу, которая принимает на вход число 
@@ -183,16 +183,25 @@ int NumberSum (int number)
     result = result + number % 10;
     number = number / 10;
     }
-    
+
     return result;
 }
 
 
-
-
-
-
-
-// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// Задача 29:---------------------------------------- 
+//Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
+
+int[] array = GetRandomArray(8);
+Console.WriteLine($"{String.Join(" , " , array)}  ->  [{String.Join(" , " , array)}]");
+
+int[] GetRandomArray(int size)
+{
+    int[] result = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+       result[i] = new Random().Next(-15,16); 
+    }
+    return result;
+}
