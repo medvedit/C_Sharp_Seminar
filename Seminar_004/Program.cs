@@ -96,7 +96,31 @@
 //заполненный нулями и единицами в случайном порядке.
 //[1,0,1,1,0,1,0,0]
 
+// ПЕРВОЕ РЕШЕНИЕ !!!-------------------------------------------------------------------
+// int[] Arrey = new int [8];
+// FillArray(Arrey.Length);
+// Console.WriteLine($"[{String.Join(",", Arrey)}]");
 
+// void FillArray(int size){
+//     for (int i = 0; i < size; i++)
+//     {
+//         Arrey[i] = new Random().Next(0,2);
+//     }
+// }
+
+// ВТОРОЕ РЕШЕНИЕ !!!------------------------------------------------------------------
+// int[] array = GetBinaryArray(8);
+// Console.WriteLine($"[{String.Join(",", array)}]");
+
+// int[] GetBinaryArray(int size)
+// {
+//     int[] result = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//        result[i] = new Random().Next(0,2); 
+//     } 
+//     return result;
+// }
 
 
 
