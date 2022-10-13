@@ -65,7 +65,7 @@
 // }
 
 
-// ТРЕТИЕ РЕШЕНИЕ !!!------------------------------------------------------------------
+// ТРЕТЬЕ РЕШЕНИЕ !!!------------------------------------------------------------------
 //Console.WriteLine("введите число:");
 //Console.WriteLine($"чисел: {Console.ReadLine()!.Length}");
 
@@ -130,9 +130,25 @@
 // и возводит число A в натуральную степень B.
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
-
-
 // ПЕРВОЕ РЕШЕНИЕ !!!  ------------------------------------------
+int GetExtent(int num1, int num2)
+{
+  int result = 1;
+  for(int i=1; i <= num2; i++){
+    result = result * num1;
+  }
+    return result;
+}
+
+  Console.Write("Введите число A: ");
+  int A = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите число B: ");
+  int B = Convert.ToInt32(Console.ReadLine());
+
+  Console.WriteLine($"Ответ: {GetExtent(A,B)}");
+
+
+// ВТОРОЕ РЕШЕНИЕ !!!  ------------------------------------------
 Console.WriteLine("Введите число а: ");
 int a = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите число b: ");
@@ -149,7 +165,7 @@ void GettDegree(int x, int y)
 
 
 
-//ВТОРОЕ РЕШЕНИЕ !!! --------------------------------------------
+//ТРЕТЬЕ РЕШЕНИЕ !!! --------------------------------------------
 Console.WriteLine("Введите число а: ");
 int x = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите число b: ");
@@ -171,8 +187,8 @@ int GetDegree (int x, int y)
 // 82 -> 10
 // 9012 -> 12
 Console.WriteLine("Введите число: ");
-int A = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Сумма цифр в числе {A} равна {NumberSum(A)}");
+int X = int.Parse(Console.ReadLine()!);
+Console.WriteLine($"Сумма цифр в числе {X} равна {NumberSum(X)}");
 
 int NumberSum (int number)
 {
