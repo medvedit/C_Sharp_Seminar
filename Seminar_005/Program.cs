@@ -153,26 +153,50 @@ int[] GitArray(int size, int minValue, int maxValue)
 //[6 7 3 6] -> 36 21
 
 
-// Решение через void-----------------------------------------------------------------------------------
-int[] massiv1 = GitArray(7, 0, 9);
-Console.WriteLine($"Первый массив -> [ {String.Join("  ", massiv1)} ]");
+// // Решение через void-----------------------------------------------------------------------------------
+// int[] massiv1 = GitArray(7, 0, 9);
+// Console.WriteLine($"Первый массив -> [ {String.Join("  ", massiv1)} ]");
 
-ResultArray(massiv1);
+// ResultArray(massiv1);
 
-void ResultArray(int[] arraymetod)
+// void ResultArray(int[] arraymetod)
+// {
+//     Console.Write($"Произведение пар чисел в массиве -> [ ");
+//     for (int i = 0, j = arraymetod.Length - 1; i < arraymetod.Length / 2; i++, j--)
+//     {
+//         Console.Write(arraymetod[i] * arraymetod[j] + " ");
+//     }
+//     if(arraymetod.Length % 2 != 0)
+//     {
+//         Console.WriteLine($"{arraymetod[arraymetod.Length/2]} ]");
+//     }
+//     else
+//     {
+//         Console.WriteLine($"]");
+//     }
+// }
+
+// Решение через int[], return result-----------------------------------------------------------------------------------
+int[] massiv2 = GitArray(7, 0, 5);
+Console.WriteLine($"Первый массив -> [{String.Join(", ", massiv2)}]");
+Console.WriteLine($"Произведение пар чисел в массиве -> [{String.Join(", ", ResultArr(massiv2))}]");
+
+
+int[] ResultArr(int[] resarr)
 {
-    Console.Write($"Произведение пар чисел в массиве -> [ ");
-    for (int i = 0, j = arraymetod.Length - 1; i < arraymetod.Length / 2; i++, j--)
+    int size = resarr.Length / 2;
+    if(resarr.Length % 2 == 1)
     {
-        Console.Write(arraymetod[i] * arraymetod[j] + " ");
+        size++;
     }
-    if(arraymetod.Length % 2 != 0)
+    int[] result = new int[size];
+    for (int i = 0; i < resarr.Length / 2; i++)
     {
-        Console.WriteLine($"{arraymetod[arraymetod.Length/2]} ]");
+        result[i] = resarr[i] * resarr[resarr.Length - 1 - i ];
     }
-    else
+    if (resarr.Length % 2 == 1)
     {
-        Console.WriteLine($"]");
+        result[size - 1] = resarr[resarr.Length / 2 ];
     }
+     return result;
 }
-
