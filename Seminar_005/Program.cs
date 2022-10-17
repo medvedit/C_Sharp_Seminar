@@ -42,8 +42,8 @@ int[] GitArray(int size, int minValue, int maxValue)
 
 // [-4, -8, 8, 2] -> [4, 8, -8, -2]
 
-int[] arr = GitArray(12, -92, 93);
-Console.WriteLine(String.Join("   ", arr));
+// int[] arr = GitArray(12, -92, 93);
+// Console.WriteLine(String.Join("   ", arr));
 
 
 //Вариант 1_______________________________________________________________
@@ -77,3 +77,36 @@ Console.WriteLine(String.Join("   ", arr));
 // }    
 // Console.WriteLine(String.Join("   ", ExchangeArr(arr)));
 // //________________________________________________________________________
+
+
+// Задача 3 в клсаасе:-------------------------------------------------------------------------------------------------------------
+//Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+// 4; массив [6, 7, 19, 345, 3] -> нет
+// 3; массив [6, 7, 19, 345, 3] -> да
+
+int[] arra = GitArray(12, -5, 5);
+Console.WriteLine($"Случайный массив -> {String.Join("   ", arra)}");
+
+int A = new Random().Next(-5, 5);
+Console.WriteLine($"Случайное, искомое число -> {A}");
+NumberSearch(arra);
+
+void NumberSearch(int[]arra1)
+{
+int count = 0;
+for (int i = 0; i < arra1.Length; i++)
+{
+    if(arra1[i] == A)
+    {
+        count++;
+    }
+}
+if(count == 0)
+{
+    Console.WriteLine($"В массиве [{String.Join(", ", arra1)}]-> встретилось {count} раз(а) -> нет");
+}
+else
+{
+    Console.WriteLine($"В массиве [{String.Join(", ", arra1)}] -> встретилось {count} раз(а) -> да");
+}
+}
