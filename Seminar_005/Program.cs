@@ -84,32 +84,74 @@ int[] GitArray(int size, int minValue, int maxValue)
 // 4; массив [6, 7, 19, 345, 3] -> нет
 // 3; массив [6, 7, 19, 345, 3] -> да
 
-int[] arra = GitArray(12, -5, 5);
-Console.WriteLine($"Случайный массив -> {String.Join("   ", arra)}");
+// int[] arra = GitArray(12, -5, 5);
+// Console.WriteLine($"Случайный массив -> {String.Join("   ", arra)}");
 
-int A = new Random().Next(-5, 5);
-Console.WriteLine($"Случайное, искомое число -> {A}");
+// int A = new Random().Next(-5, 5);
+// Console.WriteLine($"Случайное, искомое число -> {A}");
 
-NumberSearch(arra);
+// NumberSearch(arra);
 
 
 
-void NumberSearch(int[]arra1)
+// void NumberSearch(int[]arra1)
+// {
+//     int count = 0;
+//     for (int i = 0; i < arra1.Length; i++)
+//     {
+//         if(arra1[i] == A)
+//         {   
+//             count++;
+//         }
+//     }
+//     if(count == 0)
+//     {
+//         Console.WriteLine($"В массиве [{String.Join(", ", arra1)}]-> встретилось {count} раз(а) -> нет");
+//     }
+//     else
+//     {
+//         Console.WriteLine($"В массиве [{String.Join(", ", arra1)}] -> встретилось {count} раз(а) -> да");
+//     }
+// }
+
+
+// Задача 4 В классе:----------------------------------------------------------------------------------------------------------------------------------------
+// Задайте одномерный массив из 123 случайных чисел. 
+//Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+
+int[] massiv = GitArray(123, 0, 9999);
+Console.WriteLine($"Случайный массив -> {String.Join("   ", massiv)}");
+
+NumberSearch(massiv);
+
+
+void NumberSearch(int[] numberarray)
 {
     int count = 0;
-    for (int i = 0; i < arra1.Length; i++)
+    for (int i = 0; i < numberarray.Length; i++)
     {
-        if(arra1[i] == A)
-        {   
+        if(numberarray[i] >= 10 && numberarray[i] <= 99)
+        {
             count++;
         }
     }
     if(count == 0)
     {
-        Console.WriteLine($"В массиве [{String.Join(", ", arra1)}]-> встретилось {count} раз(а) -> нет");
+        Console.WriteLine($"В этом массиве, числа в промежутке от 10 до 99 встречаются {count} раз");
     }
     else
     {
-        Console.WriteLine($"В массиве [{String.Join(", ", arra1)}] -> встретилось {count} раз(а) -> да");
+        Console.WriteLine($"В этом массиве, числа в промежутке от 10 до 99 встречаются {count} раз");
     }
 }
+
+
+// Задача 5:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Найдите произведение пар чисел в одномерном массиве. 
+// Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+// Результат запишите в новом массиве.
+//[1 2 3 4 5] -> 5 8 3
+//[6 7 3 6] -> 36 21
+
+int[] massiv1 = GitArray(123, 0, 9999);
+Console.WriteLine($"Случайный массив -> {String.Join("   ", massiv1)}");
