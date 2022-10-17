@@ -176,27 +176,52 @@ int[] GitArray(int size, int minValue, int maxValue)
 //     }
 // }
 
-// Решение через int[], return result-----------------------------------------------------------------------------------
-int[] massiv2 = GitArray(7, 0, 5);
-Console.WriteLine($"Первый массив -> [{String.Join(", ", massiv2)}]");
-Console.WriteLine($"Произведение пар чисел в массиве -> [{String.Join(", ", ResultArr(massiv2))}]");
+// // Решение через int[], return result-----------------------------------------------------------------------------------
+// int[] massiv2 = GitArray(7, 0, 5);
+// Console.WriteLine($"Первый массив -> [{String.Join(", ", massiv2)}]");
+// Console.WriteLine($"Произведение пар чисел в массиве -> [{String.Join(", ", ResultArr(massiv2))}]");
 
 
-int[] ResultArr(int[] resarr)
-{
-    int size = resarr.Length / 2;
-    if(resarr.Length % 2 == 1)
+// int[] ResultArr(int[] resarr)
+// {
+//     int size = resarr.Length / 2;
+//     if(resarr.Length % 2 == 1)
+//     {
+//         size++;
+//     }
+//     int[] result = new int[size];
+//     for (int i = 0; i < resarr.Length / 2; i++)
+//     {
+//         result[i] = resarr[i] * resarr[resarr.Length - 1 - i ];
+//     }
+//     if (resarr.Length % 2 == 1)
+//     {
+//         result[size - 1] = resarr[resarr.Length / 2 ];
+//     }
+//      return result;
+// }
+
+
+//---------------------------------------------------------- Домашняя работа --------------------------------------------------------------------------------------------------
+// Задача 34: 
+// Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+//[345, 897, 568, 234] -> 2
+
+   int EvenNumber(int[] myArray1)
     {
-        size++;
+        int count = 0;
+        for (int i = 0; i < myArray1.Length; i++)
+        {
+            if (myArray1[i] % 2 == 0)
+            {
+                count++;
+            }
+        }
+        return count;
     }
-    int[] result = new int[size];
-    for (int i = 0; i < resarr.Length / 2; i++)
-    {
-        result[i] = resarr[i] * resarr[resarr.Length - 1 - i ];
-    }
-    if (resarr.Length % 2 == 1)
-    {
-        result[size - 1] = resarr[resarr.Length / 2 ];
-    }
-     return result;
-}
+
+int[] myArray = GitArray(5, 100, 999);
+Console.WriteLine($"Случайный массив -> [{String.Join(", ", myArray)}]");
+Console.WriteLine($"Количество четных чисел в массиве -> {EvenNumber(myArray)}");
+           
