@@ -96,20 +96,20 @@ NumberSearch(arra);
 
 void NumberSearch(int[]arra1)
 {
-int count = 0;
-for (int i = 0; i < arra1.Length; i++)
-{
-    if(arra1[i] == A)
+    int count = 0;
+    for (int i = 0; i < arra1.Length; i++)
     {
-        count++;
+        if(arra1[i] == A)
+        {   
+            count++;
+        }
     }
-}
-if(count == 0)
-{
-    Console.WriteLine($"В массиве [{String.Join(", ", arra1)}]-> встретилось {count} раз(а) -> нет");
-}
-else
-{
-    Console.WriteLine($"В массиве [{String.Join(", ", arra1)}] -> встретилось {count} раз(а) -> да");
-}
+    if(count == 0)
+    {
+        Console.WriteLine($"В массиве [{String.Join(", ", arra1)}]-> встретилось {count} раз(а) -> нет");
+    }
+    else
+    {
+        Console.WriteLine($"В массиве [{String.Join(", ", arra1)}] -> встретилось {count} раз(а) -> да");
+    }
 }
