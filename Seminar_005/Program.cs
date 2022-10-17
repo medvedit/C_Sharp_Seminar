@@ -17,7 +17,21 @@ int[] GitArray(int size, int minValue, int maxValue)
 int[] array = GitArray(12, -9, 9);
 Console.WriteLine(String.Join("  ", array));
 //________________________________________________________________________________________________________
+//Складываем положительные и отрицательные цифры__________________________________________________________
+int negativeSum = 0;  // создаем переменные в еоторых будем суммировать
+int positiveSum = 0;  // отрицательные и положительные числа.
 
-
-
+for (int i = 0; i < array.Length; i++)
+{
+    if(array[i] < 0)
+    {
+        negativeSum = negativeSum + array[i];
+    }
+    else
+    {
+        positiveSum = positiveSum + array[i];
+    }
+}
+Console.WriteLine($"Positive Sum =  {positiveSum}\nNegative Sum = {negativeSum}");
+//______________________________________________________________________________________________________
  
