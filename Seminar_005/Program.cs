@@ -89,7 +89,10 @@ Console.WriteLine($"Случайный массив -> {String.Join("   ", arra)
 
 int A = new Random().Next(-5, 5);
 Console.WriteLine($"Случайное, искомое число -> {A}");
+
 NumberSearch(arra);
+
+
 
 void NumberSearch(int[]arra1)
 {
