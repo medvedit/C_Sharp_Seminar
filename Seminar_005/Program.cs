@@ -119,28 +119,60 @@ int[] GitArray(int size, int minValue, int maxValue)
 // Задайте одномерный массив из 123 случайных чисел. 
 //Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
 
-int[] massiv = GitArray(123, 0, 9999);
-Console.WriteLine($"Случайный массив -> {String.Join("   ", massiv)}");
+// int[] massiv = GitArray(123, 0, 9999);
+// Console.WriteLine($"Случайный массив -> {String.Join("   ", massiv)}");
 
-NumberSearch(massiv);
+// NumberSearch(massiv);
 
 
-void NumberSearch(int[] numberarray)
+// void NumberSearch(int[] numberarray)
+// {
+//     int count = 0;
+//     for (int i = 0; i < numberarray.Length; i++)
+//     {
+//         if(numberarray[i] >= 10 && numberarray[i] <= 99)
+//         {
+//             count++;
+//         }
+//     }
+//     if(count == 0)
+//     {
+//         Console.WriteLine($"В этом массиве, числа в промежутке от 10 до 99 встречаются {count} раз");
+//     }
+//     else
+//     {
+//         Console.WriteLine($"В этом массиве, числа в промежутке от 10 до 99 встречаются {count} раз");
+//     }
+// }
+
+// Задача 5:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Найдите произведение пар чисел в одномерном массиве. 
+// Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+// Результат запишите в новом массиве.
+//[1 2 3 4 5] -> 5 8 3
+//[6 7 3 6] -> 36 21
+
+
+// Решение через void-----------------------------------------------------------------------------------
+int[] massiv1 = GitArray(7, 0, 9);
+Console.WriteLine($"Первый массив -> [ {String.Join("  ", massiv1)} ]");
+
+ResultArray(massiv1);
+
+void ResultArray(int[] arraymetod)
 {
-    int count = 0;
-    for (int i = 0; i < numberarray.Length; i++)
+    Console.Write($"Произведение пар чисел в массиве -> [ ");
+    for (int i = 0, j = arraymetod.Length - 1; i < arraymetod.Length / 2; i++, j--)
     {
-        if(numberarray[i] >= 10 && numberarray[i] <= 99)
-        {
-            count++;
-        }
+        Console.Write(arraymetod[i] * arraymetod[j] + " ");
     }
-    if(count == 0)
+    if(arraymetod.Length % 2 != 0)
     {
-        Console.WriteLine($"В этом массиве, числа в промежутке от 10 до 99 встречаются {count} раз");
+        Console.WriteLine($"{arraymetod[arraymetod.Length/2]} ]");
     }
     else
     {
-        Console.WriteLine($"В этом массиве, числа в промежутке от 10 до 99 встречаются {count} раз");
+        Console.WriteLine($"]");
     }
 }
+
