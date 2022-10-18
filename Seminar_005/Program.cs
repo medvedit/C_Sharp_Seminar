@@ -233,42 +233,103 @@ int[] GitArray(int size, int minValue, int maxValue)
 // [-4, -6, 89, 6] -> 0
 
 
-//Вариант первый________________________________________
-int[] myArray = GitArray(5, -999, 1000);
+// //Вариант первый________________________________________
+// int[] myArray = GitArray(5, -999, 1000);
+// Console.WriteLine();
+// Console.WriteLine($"[{String.Join(", ", myArray)}] -> {SumOfElements(myArray)}");
+// Console.WriteLine();
+
+// int SumOfElements(int[]array1)
+// {
+//     int result = 0;
+//     for (int i = 1; i < array1.Length; i = i + 2)
+//     {
+//         result = result + array1[i];
+//     }
+//         return result;
+// }
+
+// // Ответ   [359, -768, 71, -24, -120, 667] -> -125
+// //         [-256, -179, -419, 700, 838] -> 521
+
+// //Вариант второй________________________________________
+// int[] myArray1 = GitArray(5, -999, 1000);
+// Console.WriteLine($"[{String.Join(", ", myArray1)}]");
+
+// SumOfElements1(myArray1);
+
+
+// void SumOfElements1(int[]array1)
+// {
+//     int rezult = 0;
+//     for (int i = 1; i < array1.Length; i = i + 2)
+//     {
+//         rezult = rezult + array1[i];
+//     }
+//     Console.WriteLine(String.Join("   ", rezult));
+// }
+// // ОТВЕТ:  [584, -454, 720, 85, 309, 225]
+// //         -144                           НЕ СМОГ КРАСИВО ВЫВЕСТИ ОТВЕТ С МЕТОДОМ VOID !!!!!!!!!!!
+// //         [376, 120, 456, -919, 643]
+// //         -799                           НЕ СМОГ КРАСИВО ВЫВЕСТИ ОТВЕТ С МЕТОДОМ VOID !!!!!!!!!!! 
+
+
+//Задача 38:-------------------------------------------------------------
+//  Задайте массив вещественных чисел(просто от минус бесконечности, до плюс бесконечности, 
+//  с дробными не работаем). Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+// //Первый вариант---------------------------------------------------------------
+// int[] myArray2 = GitArray(7, -999, 1000);
+
+// Console.WriteLine();
+// Console.WriteLine($"Случайный массив -> [{String.Join(", ", myArray2)}]");
+// Console.WriteLine($"Разница между максимальным и минимальным элементом: {DifferenceMaxMin(myArray2)}");
+// Console.WriteLine();
+
+// int DifferenceMaxMin(int[]myarray)
+// {
+//     int min = 0;
+//     int max = 0;
+//     foreach (int i in myarray)  // Поиск максимального и минимального значения
+//     {
+//         if (min > i) min = i;
+//         if (max < i) max = i;
+//     }
+//     int diff = 0;
+//     diff = max - min;
+//     return diff;
+// }
+// // Ответ: Случайный массив -> [-785, 423, 65, -880, 935, -493, 347]
+// //        Разница между максимальным и минимальным элементом: 1815
+
+//Второй вариант-------------------------------------------------------------------------
+
+int[] myArray2 = GitArray(7, -999, 1000);
+
 Console.WriteLine();
-Console.WriteLine($"[{String.Join(", ", myArray)}] -> {SumOfElements(myArray)}");
+Console.WriteLine($"Случайный массив -> [{String.Join(", ", myArray2)}]");
+Console.WriteLine($"Разница между максимальным и минимальным элементом: {DifferenceMaxMin(myArray2)}");
 Console.WriteLine();
 
-int SumOfElements(int[]array1)
-{
-    int result = 0;
-    for (int i = 1; i < array1.Length; i = i + 2)
+int DifferenceMaxMin(int[]myarray)
+{   
+    int nummax = 0;
+    int nummin = 0;
+    for (int i = 0; i < myarray.Length; i++)
     {
-        result = result + array1[i];
+        if(myarray[i] > nummax)
+        {
+            nummax = myarray[i];
+        }
+        if(myarray[i] < nummin)
+        {
+            nummin = myarray[i];
+        }
     }
-        return result;
+    int numdiff = 0;
+    numdiff = nummax - nummin;
+    return numdiff;
 }
-
-// Ответ   [359, -768, 71, -24, -120, 667] -> -125
-//         [-256, -179, -419, 700, 838] -> 521
-
-//Вариант второй________________________________________
-int[] myArray1 = GitArray(5, -999, 1000);
-Console.WriteLine($"[{String.Join(", ", myArray1)}]");
-
-SumOfElements1(myArray1);
-
-
-void SumOfElements1(int[]array1)
-{
-    int rezult = 0;
-    for (int i = 1; i < array1.Length; i = i + 2)
-    {
-        rezult = rezult + array1[i];
-    }
-    Console.WriteLine(String.Join("   ", rezult));
-}
-// ОТВЕТ:  [584, -454, 720, 85, 309, 225]
-//         -144                           НЕ СМОГ КРАСИВО ВЫВЕСТИ ОТВЕТ С МЕТОДОМ VOID !!!!!!!!!!!
-//         [376, 120, 456, -919, 643]
-//         -799                           НЕ СМОГ КРАСИВО ВЫВЕСТИ ОТВЕТ С МЕТОДОМ VOID !!!!!!!!!!!     
+// Ответ:    Случайный массив -> [-196, 49, -999, -374, 360, 237, 351]
+//           Разница между максимальным и минимальным элементом: 1359
