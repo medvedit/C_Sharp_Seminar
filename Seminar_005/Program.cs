@@ -203,25 +203,72 @@ int[] GitArray(int size, int minValue, int maxValue)
 
 
 //---------------------------------------------------------- Домашняя работа --------------------------------------------------------------------------------------------------
-// Задача 34: 
-// Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-//[345, 897, 568, 234] -> 2
+// // Задача 34: --------------------------------------
+// // Задайте массив заполненный случайными положительными трёхзначными числами. 
+// // Напишите программу, которая покажет количество чётных чисел в массиве.
+// //[345, 897, 568, 234] -> 2
 
-   int EvenNumber(int[] myArray1)
-    {
-        int count = 0;
-        for (int i = 0; i < myArray1.Length; i++)
-        {
-            if (myArray1[i] % 2 == 0)
-            {
-                count++;
-            }
-        }
-        return count;
-    }
+//    int EvenNumber(int[] myArray1)
+//     {
+//         int count = 0;
+//         for (int i = 0; i < myArray1.Length; i++)
+//         {
+//             if (myArray1[i] % 2 == 0)
+//             {
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
 
-int[] myArray = GitArray(5, 100, 999);
-Console.WriteLine($"Случайный массив -> [{String.Join(", ", myArray)}]");
-Console.WriteLine($"Количество четных чисел в массиве -> {EvenNumber(myArray)}");
+// int[] myArray = GitArray(5, 100, 999);
+// Console.WriteLine($"Случайный массив -> [{String.Join(", ", myArray)}]");
+// Console.WriteLine($"Количество четных чисел в массиве -> {EvenNumber(myArray)}");
            
+
+// Задача 36: -------------------------
+// Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+
+//Вариант первый________________________________________
+int[] myArray = GitArray(5, -999, 1000);
+Console.WriteLine();
+Console.WriteLine($"[{String.Join(", ", myArray)}] -> {SumOfElements(myArray)}");
+Console.WriteLine();
+
+int SumOfElements(int[]array1)
+{
+    int result = 0;
+    for (int i = 1; i < array1.Length; i = i + 2)
+    {
+        result = result + array1[i];
+    }
+        return result;
+}
+
+// Ответ   [359, -768, 71, -24, -120, 667] -> -125
+//         [-256, -179, -419, 700, 838] -> 521
+
+//Вариант второй________________________________________
+int[] myArray1 = GitArray(5, -999, 1000);
+Console.WriteLine($"[{String.Join(", ", myArray1)}]");
+
+SumOfElements1(myArray1);
+
+
+void SumOfElements1(int[]array1)
+{
+    int rezult = 0;
+    for (int i = 1; i < array1.Length; i = i + 2)
+    {
+        rezult = rezult + array1[i];
+    }
+    Console.WriteLine(String.Join("   ", rezult));
+}
+// ОТВЕТ:  [584, -454, 720, 85, 309, 225]
+//         -144                           НЕ СМОГ КРАСИВО ВЫВЕТИ ОТВЕТ С МЕТОДОМ VOID !!!!!!!!!!!
+//         [376, 120, 456, -919, 643]
+//         -799                           НЕ СМОГ КРАСИВО ВЫВЕТИ ОТВЕТ С МЕТОДОМ VOID !!!!!!!!!!!     
