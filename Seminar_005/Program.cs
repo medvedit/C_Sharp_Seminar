@@ -358,13 +358,13 @@ int m = int.Parse(Console.ReadLine()!);
 double[] startArray = new double[m];
 FillArray(startArray);
 Console.WriteLine($"[ {String.Join(" ", startArray)} ]");
-Console.WriteLine($"Разница = {DifferenceMaxMin(startArray):f2}");  // f2 - сокращение до двух цифр послезапятой.
+Console.WriteLine($"Разница = {DifferenceMaxMin(startArray):f2}");  // f2 - сокращение до двух цифр после запятой.
 
-void FillArray(double[] matrix)  // т.к. веществеенык цыфры имеют вид 0.0; 1.0; и ... , то инициализируем переменную matrix как double.
+void FillArray(double[] matrix)  // т.к. веществееные цыфры имеют вид 0.0; 1.0; и ... , то инициализируем переменную matrix как double.
 {
     for (int i = 0; i < matrix.Length; i++)
     {
-        matrix[i] = new Random().NextDouble(); // и тут поэтому NextDoubl, заполняем вещественным числом.
+        matrix[i] = new Random().NextDouble(); // и тут по-этому NextDouble, заполняем вещественным числом.
     }
 }
 
