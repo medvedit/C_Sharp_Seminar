@@ -3,15 +3,15 @@
 // // Найдите сумму отрицательных и пложительных элементов.
 
 // //Метод создания массива  по параметрам______________________________________________________________________
-int[] GitArray(int size, int minValue, int maxValue)
-{
-    int[] res = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        res[i] = new Random().Next(minValue, maxValue + 1);
-    }
-    return res;
-}
+// int[] GitArray(int size, int minValue, int maxValue)
+// {
+//     int[] res = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         res[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return res;
+// }
 // //________________________________________________________________________________________________________
 // //Вызов метода создания массива_____________________________________________________________________________________
 // int[] array = GitArray(12, -9, 9);
@@ -232,8 +232,25 @@ int[] GitArray(int size, int minValue, int maxValue)
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
+// // //Вариант первый_______________________________________
+// int[] myArray = GitArray(5, -999, 1000);
+// Console.WriteLine();
+// Console.WriteLine($"[{String.Join(", ", myArray)}] -> {GetSumOdd(myArray)}");
+// Console.WriteLine();
 
-// //Вариант первый________________________________________
+// int GetSumOdd(int[]array1)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < array1.Length; i++)
+//     {
+//         if(i % 2 !=0) sum = sum + array1[i];
+//     }
+//         return sum;
+// }
+
+// Ответ:  [-827, -556, -708, -566, 744] -> -1122
+
+// //Вариант второй_______________________________________
 // int[] myArray = GitArray(5, -999, 1000);
 // Console.WriteLine();
 // Console.WriteLine($"[{String.Join(", ", myArray)}] -> {SumOfElements(myArray)}");
@@ -252,7 +269,7 @@ int[] GitArray(int size, int minValue, int maxValue)
 // // Ответ   [359, -768, 71, -24, -120, 667] -> -125
 // //         [-256, -179, -419, 700, 838] -> 521
 
-// //Вариант второй________________________________________
+// //Вариант третий________________________________________
 // int[] myArray1 = GitArray(5, -999, 1000);
 // Console.WriteLine($"[{String.Join(", ", myArray1)}]");
 
@@ -305,31 +322,63 @@ int[] GitArray(int size, int minValue, int maxValue)
 
 //Второй вариант-------------------------------------------------------------------------
 
-int[] myArray2 = GitArray(7, -999, 1000);
+// int[] myArray2 = GitArray(7, -999, 1000);
 
-Console.WriteLine();
-Console.WriteLine($"Случайный массив -> [{String.Join(", ", myArray2)}]");
-Console.WriteLine($"Разница между максимальным и минимальным элементом: {DifferenceMaxMin(myArray2)}");
-Console.WriteLine();
+// Console.WriteLine();
+// Console.WriteLine($"Случайный массив -> [{String.Join(", ", myArray2)}]");
+// Console.WriteLine($"Разница между максимальным и минимальным элементом: {DifferenceMaxMin(myArray2)}");
+// Console.WriteLine();
 
-int DifferenceMaxMin(int[]myarray)
-{   
-    int nummax = 0;
-    int nummin = 0;
-    for (int i = 0; i < myarray.Length; i++)
-    {
-        if(myarray[i] > nummax)
-        {
-            nummax = myarray[i];
-        }
-        if(myarray[i] < nummin)
-        {
-            nummin = myarray[i];
-        }
-    }
-    int numdiff = 0;
-    numdiff = nummax - nummin;
-    return numdiff;
-}
+// int DifferenceMaxMin(int[]myarray)
+// {   
+//     int nummax = 0;
+//     int nummin = 0;
+//     for (int i = 0; i < myarray.Length; i++)
+//     {
+//         if(myarray[i] > nummax)
+//         {
+//             nummax = myarray[i];
+//         }
+//         if(myarray[i] < nummin)
+//         {
+//             nummin = myarray[i];
+//         }
+//     }
+//     int numdiff = 0;
+//     numdiff = nummax - nummin;
+//     return numdiff;
+// }
 // Ответ:    Случайный массив -> [-196, 49, -999, -374, 360, 237, 351]
 //           Разница между максимальным и минимальным элементом: 1359
+
+//Ватиант третий и ЛУЧШЫЙ, ближе к условию задачи (массив вещественных чисел).
+
+Console.Write("Введите размерность: ");
+int m = int.Parse(Console.ReadLine()!);
+double[] startArray = new double[m];
+FillArray(startArray);
+Console.WriteLine($"[ {String.Join(" ", startArray)} ]");
+Console.WriteLine($"Разница = {DifferenceMaxMin(startArray):f2}");  // f2 - сокращение до двух цифр послезапятой.
+
+void FillArray(double[] matrix)  // т.к. веществеенык цыфры имеют вид 0.0; 1.0; и ... , то инициализируем переменную matrix как double.
+{
+    for (int i = 0; i < matrix.Length; i++)
+    {
+        matrix[i] = new Random().NextDouble(); // и тут поэтому NextDoubl, заполняем вещественным числом.
+    }
+}
+
+double DifferenceMaxMin(double[]array)
+{
+    double min = 0;
+    double max = 0;
+    foreach (var item in array)
+    {
+        if (min > item) min = item;
+        if (max < item) max = item;
+    }
+    return max - min;
+}
+// Ответ :  Введите размерность: 5
+//          [ 0,7344259557107601 0,09428104393515235 0,7370876064405543 0,4739443138125671 0,8023544622650124 ]
+//          Разница = 0,80
