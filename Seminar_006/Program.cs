@@ -86,11 +86,34 @@
 
 // Вариант первый-----------------------------------------------------------------------
 
-Console.Write("Введите число для перевода в двоичную систему : ");
-int transfer = int.Parse(Console.ReadLine()!);
-Console.WriteLine(Convert.ToString(transfer, 2));   // Convert.ToString перевод в другую систему, меняем цифру в конце.
+// Console.Write("Введите число для перевода в двоичную систему : ");
+// int transfer = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(Convert.ToString(transfer, 2));   // Convert.ToString перевод в другую систему, меняем цифру в конце.
 
 //Вариант второй-------------------------------------------------------------------------
 
 
+Console.Write("Введите число для перевода в двоичную систему : ");
+int transfer = int.Parse(Console.ReadLine()!);
 
+Console.WriteLine(ConvertToBinary(transfer));
+
+String ConvertToBinary(int pass)
+{
+    int temp;
+    String binary = "";
+    String finalBinary = "";
+    do
+    {
+        temp = pass % 2;
+        binary = binary + temp;  // binary += temp
+        pass = pass / 2;  // transfer /= 2
+    } while (pass >= 1);
+    for (int i = binary.Length - 1; i >= 0; i--)
+    {
+        finalBinary = finalBinary + binary[i];
+    }
+    return finalBinary;
+}
+// Ответ : Введите число для перевода в двоичную систему : 45
+//         101101
