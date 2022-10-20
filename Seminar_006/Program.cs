@@ -126,8 +126,8 @@ int[] GitArray(int size, int minValue, int maxValue)
 int[] myArray = GitArray(10,0,10);
 Console.WriteLine($"[{String.Join(" , ", myArray)}]");
 
-Console.WriteLine($"[{String.Join(" | ", CopyArray(myArray))}]");
-
+int[] myArrayCopy = CopyArray(myArray);
+Console.WriteLine($"[{String.Join(" | ", myArrayCopy)}]");
 
 int[] CopyArray(int[] arr)
 {
@@ -140,4 +140,7 @@ int[] CopyArray(int[] arr)
 }
 //Ответ : [5 , 2 , 7 , 6 , 3 , 7 , 0 , 3 , 8 , 1]
 //        [5 | 2 | 7 | 6 | 3 | 7 | 0 | 3 | 8 | 1]
+
+
+//=============================================================== ДОМАШНЯЯ РАБОТА ======================================================================================
 
