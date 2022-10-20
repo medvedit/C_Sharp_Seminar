@@ -20,63 +20,66 @@
 
 //Второй вариант решения___________________________________________________
 
-int[] myArray = GitArray(10,0,10);
-Console.WriteLine($"[{String.Join(", ", myArray)}]");
+// int[] myArray = GitArray(10,0,10);
+// Console.WriteLine($"[{String.Join(", ", myArray)}]");
 
-int[] myArray2 = ReversalArray2(myArray);  // инициализировали новый массив и занесли в него result из метода ReversalArray2 .
-Console.WriteLine($"[{String.Join(", ", myArray2)}]");  // Вывели полученный массив.
+// int[] myArray2 = ReversalArray2(myArray);  // инициализировали новый массив и занесли в него result из метода ReversalArray2 .
+// Console.WriteLine($"[{String.Join(", ", myArray2)}]");  // Вывели полученный массив.
 
-int[] ReversalArray2(int[] arr2)
-{
-    int[] result = new int[arr2.Length];  // создаем новый массив int[] result на основании входящего массива с той де длинной [arr2.Length] .
-    for (int i = 0; i < arr2.Length; i++)
-    {
-        result[i] = arr2[arr2.Length - i - 1]; // переносим все элементы с конца массива в начало.
-    }
-    return result;  // результат сохранили.
-}
+// int[] ReversalArray2(int[] arr2)
+// {
+//     int[] result = new int[arr2.Length];  // создаем новый массив int[] result на основании входящего массива с той де длинной [arr2.Length] .
+//     for (int i = 0; i < arr2.Length; i++)
+//     {
+//         result[i] = arr2[arr2.Length - i - 1]; // переносим все элементы с конца массива в начало.
+//     }
+//     return result;  // результат сохранили.
+// }
+//============================================================================МЕТОД=============
+// int[] GitArray(int size, int minValue, int maxValue)
+// {
+//     int[] res = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         res[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return res;
+// }
+//==============================================================================================
 
+//Задача 2 в классе________________________________________________________________________
 
+// Нужно написать программу, которая на вход принимает три числа и проверяет 
+//может ли существовать треугольник такой длинны.  
+// справедливы 
+// неравенства:       AB < AC + CB,  AC < AB + BC,  BC < BA + AC
 
+// Вариант первый-----------------------------------------------------------------------
+Console.Write("Введите первое чило \"A\": ");
+int A = int.Parse(Console.ReadLine()!);
+Console.Write("Введите первое чило \"B\": ");
+int B = int.Parse(Console.ReadLine()!);
+Console.Write("Введите первое чило \"C\": ");
+int C = int.Parse(Console.ReadLine()!);
 
+if(A < C + B && C < A + B && B < A + C) {Console.WriteLine("ДА");}
+else {Console.WriteLine("НЕТ");}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Вариант второй-------------------------------------------------------------------------
 
 
 
-int[] GitArray(int size, int minValue, int maxValue)
-{
-    int[] res = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        res[i] = new Random().Next(minValue, maxValue + 1);
-    }
-    return res;
-}
+
+
+
+//Задача 3 в классе________________________________________________________________________
+
+//Написать программу, которая будет преобразовывать десятичное число в двоичное.
+
+
+Console.Write("Введите число для перевода в двоичную систему : ");
+int transfer = int.Parse(Console.ReadLine()!);
+Console.WriteLine(Convert.ToString(transfer, 2));   // Convert.ToString перевод в другую систему, меняем цифру в конце.
+
+
+
