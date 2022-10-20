@@ -71,15 +71,14 @@ else {Console.WriteLine("НЕТ");}
 
 
 
-
 //Задача 3 в классе________________________________________________________________________
 
 //Написать программу, которая будет преобразовывать десятичное число в двоичное.
 
 
-Console.Write("Введите число для перевода в двоичную систему : ");
-int transfer = int.Parse(Console.ReadLine()!);
-Console.WriteLine(Convert.ToString(transfer, 2));   // Convert.ToString перевод в другую систему, меняем цифру в конце.
+// Console.Write("Введите число для перевода в двоичную систему : ");
+// int transfer = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(Convert.ToString(transfer, 2));   // Convert.ToString перевод в другую систему, меняем цифру в конце.
 
 
 
