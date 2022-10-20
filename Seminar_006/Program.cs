@@ -123,21 +123,21 @@ int[] GitArray(int size, int minValue, int maxValue)
 //Написать программу, которая будет создавать копию заданного массива 
 //с помощь поэлементного копирования.
 
-int[] myArray = GitArray(10,0,10);
-Console.WriteLine($"[{String.Join(" , ", myArray)}]");
+// int[] myArray = GitArray(10,0,10);
+// Console.WriteLine($"[{String.Join(" , ", myArray)}]");
 
-int[] myArrayCopy = CopyArray(myArray);
-Console.WriteLine($"[{String.Join(" | ", myArrayCopy)}]");
+// int[] myArrayCopy = CopyArray(myArray);
+// Console.WriteLine($"[{String.Join(" | ", myArrayCopy)}]");
 
-int[] CopyArray(int[] arr)
-{
-    int[] result = new int[arr.Length];  
-    for (int i = 0; i < arr.Length; i++)
-    {
-        result[i] = arr[i]; 
-    }
-    return result;  
-}
+// int[] CopyArray(int[] arr)
+// {
+//     int[] result = new int[arr.Length];  
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         result[i] = arr[i]; 
+//     }
+//     return result;  
+// }
 //Ответ : [5 , 2 , 7 , 6 , 3 , 7 , 0 , 3 , 8 , 1]
 //        [5 | 2 | 7 | 6 | 3 | 7 | 0 | 3 | 8 | 1]
 
