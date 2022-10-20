@@ -55,21 +55,30 @@
 // неравенства:       AB < AC + CB,  AC < AB + BC,  BC < BA + AC
 
 // Вариант первый-----------------------------------------------------------------------
-Console.Write("Введите первое чило \"A\": ");
-int A = int.Parse(Console.ReadLine()!);
-Console.Write("Введите первое чило \"B\": ");
-int B = int.Parse(Console.ReadLine()!);
-Console.Write("Введите первое чило \"C\": ");
-int C = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите первое чило \"A\": ");
+// int a = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите первое чило \"B\": ");
+// int b = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите первое чило \"C\": ");
+// int c = int.Parse(Console.ReadLine()!);
 
-if(A < C + B && C < A + B && B < A + C) {Console.WriteLine("ДА");}
-else {Console.WriteLine("НЕТ");}
+// if(a < c + b && c < a + b && b < a + c) {Console.WriteLine("ДА");}
+// else {Console.WriteLine("НЕТ");}
 
 //Вариант второй-------------------------------------------------------------------------
 
+Console.WriteLine("Введите три числа: ");
+int a = int.Parse(Console.ReadLine()!);
+int b = int.Parse(Console.ReadLine()!);
+int c = int.Parse(Console.ReadLine()!);
 
+if(CheckExistsTriangle(a, b, c)) {Console.WriteLine("Может существовать");}
+else {Console.WriteLine("Не может существовать");}
 
-
+bool CheckExistsTriangle(int a, int b, int c)  // метод Boolean (Логический)
+    {
+        return a < b + c && b < a + c && c < a + b;
+    }   
 
 //Задача 3 в классе________________________________________________________________________
 
