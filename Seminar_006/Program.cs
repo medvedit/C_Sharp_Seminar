@@ -67,27 +67,30 @@
 
 //Вариант второй-------------------------------------------------------------------------
 
-Console.WriteLine("Введите три числа: ");
-int a = int.Parse(Console.ReadLine()!);
-int b = int.Parse(Console.ReadLine()!);
-int c = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите три числа: ");
+// int a = int.Parse(Console.ReadLine()!);
+// int b = int.Parse(Console.ReadLine()!);
+// int c = int.Parse(Console.ReadLine()!);
 
-if(CheckExistsTriangle(a, b, c)) {Console.WriteLine("Может существовать");}
-else {Console.WriteLine("Не может существовать");}
+// if(CheckExistsTriangle(a, b, c)) {Console.WriteLine("Может существовать");}
+// else {Console.WriteLine("Не может существовать");}
 
-bool CheckExistsTriangle(int a, int b, int c)  // метод Boolean (Логический)
-    {
-        return a < b + c && b < a + c && c < a + b;
-    }   
+// bool CheckExistsTriangle(int a, int b, int c)  // метод Boolean (Логический)
+//     {
+//         return a < b + c && b < a + c && c < a + b;
+//     }   
 
 //Задача 3 в классе________________________________________________________________________
 
 //Написать программу, которая будет преобразовывать десятичное число в двоичное.
 
+// Вариант первый-----------------------------------------------------------------------
 
-// Console.Write("Введите число для перевода в двоичную систему : ");
-// int transfer = int.Parse(Console.ReadLine()!);
-// Console.WriteLine(Convert.ToString(transfer, 2));   // Convert.ToString перевод в другую систему, меняем цифру в конце.
+Console.Write("Введите число для перевода в двоичную систему : ");
+int transfer = int.Parse(Console.ReadLine()!);
+Console.WriteLine(Convert.ToString(transfer, 2));   // Convert.ToString перевод в другую систему, меняем цифру в конце.
+
+//Вариант второй-------------------------------------------------------------------------
 
 
 
