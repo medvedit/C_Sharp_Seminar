@@ -36,15 +36,15 @@
 //     return result;  // результат сохранили.
 // }
 //============================================================================МЕТОД=============
-// int[] GitArray(int size, int minValue, int maxValue)
-// {
-//     int[] res = new int[size];
-//     for (int i = 0; i < size; i++)
-//     {
-//         res[i] = new Random().Next(minValue, maxValue + 1);
-//     }
-//     return res;
-// }
+int[] GitArray(int size, int minValue, int maxValue)
+{
+    int[] res = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
+}
 //==============================================================================================
 
 //Задача 2 в классе________________________________________________________________________
@@ -93,27 +93,51 @@
 //Вариант второй-------------------------------------------------------------------------
 
 
-Console.Write("Введите число для перевода в двоичную систему : ");
-int transfer = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите число для перевода в двоичную систему : ");
+// int transfer = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine(ConvertToBinary(transfer));
+// Console.WriteLine(ConvertToBinary(transfer));
 
-String ConvertToBinary(int pass)
-{
-    int temp;
-    String binary = "";
-    String finalBinary = "";
-    do
-    {
-        temp = pass % 2;
-        binary = binary + temp;  // binary += temp
-        pass = pass / 2;  // transfer /= 2
-    } while (pass >= 1);
-    for (int i = binary.Length - 1; i >= 0; i--)
-    {
-        finalBinary = finalBinary + binary[i];
-    }
-    return finalBinary;
-}
+// String ConvertToBinary(int pass)
+// {
+//     int temp;
+//     String binary = "";
+//     String finalBinary = "";
+//     do
+//     {
+//         temp = pass % 2;
+//         binary = binary + temp;  // binary += temp
+//         pass = pass / 2;  // transfer /= 2
+//     } while (pass >= 1);
+//     for (int i = binary.Length - 1; i >= 0; i--)
+//     {
+//         finalBinary = finalBinary + binary[i];
+//     }
+//     return finalBinary;
+// }
 // Ответ : Введите число для перевода в двоичную систему : 45
 //         101101
+
+//Задача 4 в классе________________________________________________________________________
+
+//Написать программу, которая будет создавать копию заданного массива 
+//с помощь поэлементного копирования.
+
+int[] myArray = GitArray(10,0,10);
+Console.WriteLine($"[{String.Join(" , ", myArray)}]");
+
+Console.WriteLine($"[{String.Join(" | ", CopyArray(myArray))}]");
+
+
+int[] CopyArray(int[] arr)
+{
+    int[] result = new int[arr.Length];  
+    for (int i = 0; i < arr.Length; i++)
+    {
+        result[i] = arr[i]; 
+    }
+    return result;  
+}
+//Ответ : [5 , 2 , 7 , 6 , 3 , 7 , 0 , 3 , 8 , 1]
+//        [5 | 2 | 7 | 6 | 3 | 7 | 0 | 3 | 8 | 1]
+
