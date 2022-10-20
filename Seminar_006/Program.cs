@@ -1,40 +1,40 @@
 ﻿// Задача 1 в классе_________________________________________________
 // Напишите программу, которая перевернет одномерный массив.
 // Первый вариант решения_____________________________________________
-int[] myArray = GitArray(10,0,10);
-Console.WriteLine($"[{String.Join(", ", myArray)}]");
-
-ReversalArray(myArray);
-Console.WriteLine($"[{String.Join(", ", myArray)}]");
-
-void ReversalArray(int[] arr)
-{
-    for (int i = 0; i < arr.Length / 2; i++)  // В этом случае делим массив пополам!
-    {
-        int temp = arr[i];  // обьявляем временную переменную temp и зпносим в нее значение arr[i], а вначале цикла for это = int i = 0 .
-        arr[i] = arr[arr.Length - i - 1]; // теперь в  освободившейся arr[i] заносим последний элемент в массиве arr[arr.Length - i - 1] .
-        arr[arr.Length - i - 1] = temp;  // у нас освободилось значение последнего элемента и в него мы сейчас переносим значение из temp .
-        // по циклу for поочередно меняются все элементы.
-    }
-}
-
-//Второй вариант решения___________________________________________________
-
 // int[] myArray = GitArray(10,0,10);
 // Console.WriteLine($"[{String.Join(", ", myArray)}]");
 
-// int[] myArray2 = ReversalArray2(myArray);  // инициализировали новый массив и занесли в него result из метода ReversalArray2 .
-// Console.WriteLine($"[{String.Join(", ", myArray2)}]");  // Вывели полученный массив.
+// ReversalArray(myArray);
+// Console.WriteLine($"[{String.Join(", ", myArray)}]");
 
-// int[] ReversalArray2(int[] arr2)
+// void ReversalArray(int[] arr)
 // {
-//     int[] result = new int[arr2.Length];  // создаем новый массив int[] result на основании входящего массива с той де длинной [arr2.Length] .
-//     for (int i = 0; i < arr2.Length; i++)
+//     for (int i = 0; i < arr.Length / 2; i++)  // В этом случае делим массив пополам!
 //     {
-//         result[i] = arr2[arr2.Length - i - 1]; // переносим все элементы с конца массива в начало.
+//         int temp = arr[i];  // обьявляем временную переменную temp и зпносим в нее значение arr[i], а вначале цикла for это = int i = 0 .
+//         arr[i] = arr[arr.Length - i - 1]; // теперь в  освободившейся arr[i] заносим последний элемент в массиве arr[arr.Length - i - 1] .
+//         arr[arr.Length - i - 1] = temp;  // у нас освободилось значение последнего элемента и в него мы сейчас переносим значение из temp .
+//         // по циклу for поочередно меняются все элементы.
 //     }
-//     return result;  // результат сохранили.
 // }
+
+//Второй вариант решения___________________________________________________
+
+int[] myArray = GitArray(10,0,10);
+Console.WriteLine($"[{String.Join(", ", myArray)}]");
+
+int[] myArray2 = ReversalArray2(myArray);  // инициализировали новый массив и занесли в него result из метода ReversalArray2 .
+Console.WriteLine($"[{String.Join(", ", myArray2)}]");  // Вывели полученный массив.
+
+int[] ReversalArray2(int[] arr2)
+{
+    int[] result = new int[arr2.Length];  // создаем новый массив int[] result на основании входящего массива с той де длинной [arr2.Length] .
+    for (int i = 0; i < arr2.Length; i++)
+    {
+        result[i] = arr2[arr2.Length - i - 1]; // переносим все элементы с конца массива в начало.
+    }
+    return result;  // результат сохранили.
+}
 
 
 
