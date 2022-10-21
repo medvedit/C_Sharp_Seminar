@@ -152,9 +152,11 @@
 // 1, -7, 567, 89, 223-> 4
 
 
+Console.WriteLine();
 Console.Write("Введите некоторое колличество положительных и отрицательных чисел\n(ЧЕРЕЗ ПРОБЕЛ, ПОСЛЕ ПОСЛЕДНЕЙ ЦИФРЫ ПРОБЕЛ НЕ ВВОДИТЬ!!!)\n: ");
 int[] array = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
-Console.WriteLine($"{String.Join(", ", array)}     цифр > 0 -> {PositiveNumbers(array)}");
+Console.WriteLine($"  {String.Join(", ", array)}     цифр > 0 -> {PositiveNumbers(array)}");
+Console.WriteLine();
 
 int PositiveNumbers(int[] collection)
 {
@@ -171,4 +173,37 @@ int PositiveNumbers(int[] collection)
 //        1, 34, -29, -1, 0, -992     цифр > 0 -> 2
 
 
+// Задача 43: ---------------------------------------------
+// Напишите программу, которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+// значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+Console.Write("Введите значение b1: ");
+double b1 = int.Parse(Console.ReadLine()!);
+Console.Write("Введите значение k1: ");
+double k1 = int.Parse(Console.ReadLine()!);
+Console.Write("Введите значение b2: ");
+double b2 = int.Parse(Console.ReadLine()!);
+Console.Write("Введите значение k2: ");
+double k2 = int.Parse(Console.ReadLine()!);
+Console.WriteLine();
+Console.WriteLine($" b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> {GitSum(b1,k1,b2,k2)}");
+Console.WriteLine();
+
+(double, double) GitSum(double b1, double k1, double b2, double k2)
+{
+    double y = 0;
+    double x = 0;
+    x = (b2 - b1)/(k1 - k2);
+    y = k1 * x + b1;
+     var tuple = (x, y);
+    return tuple;
+}
+// Ответ: Введите значение b1: 2
+//        Введите значение k1: 5
+//        Введите значение b2: 4
+//        Введите значение k2: 9
+
+//        b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5, -0,5)
 
