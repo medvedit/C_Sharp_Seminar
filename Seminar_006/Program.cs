@@ -36,15 +36,15 @@
 //     return result;  // результат сохранили.
 // }
 //============================================================================МЕТОД=============
-// int[] GitArray(int size, int minValue, int maxValue)
-// {
-//     int[] res = new int[size];
-//     for (int i = 0; i < size; i++)
-//     {
-//         res[i] = new Random().Next(minValue, maxValue + 1);
-//     }
-//     return res;
-// }
+int[] GitArray(int size, int minValue, int maxValue)
+{
+    int[] res = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
+}
 //==============================================================================================
 
 //Задача 2 в классе________________________________________________________________________
@@ -152,11 +152,13 @@
 // 1, -7, 567, 89, 223-> 4
 
 
-Console.WriteLine();
+
 Console.Write("Введите некоторое колличество положительных и отрицательных чисел\n(ЧЕРЕЗ ПРОБЕЛ, ПОСЛЕ ПОСЛЕДНЕЙ ЦИФРЫ ПРОБЕЛ НЕ ВВОДИТЬ!!!)\n: ");
 int[] array = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
+
+
 Console.WriteLine($"  {String.Join(", ", array)}     цифр > 0 -> {PositiveNumbers(array)}");
-Console.WriteLine();
+
 
 int PositiveNumbers(int[] collection)
 {
@@ -187,9 +189,9 @@ Console.Write("Введите значение b2: ");
 double b2 = int.Parse(Console.ReadLine()!);
 Console.Write("Введите значение k2: ");
 double k2 = int.Parse(Console.ReadLine()!);
-Console.WriteLine();
+
 Console.WriteLine($" b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> {GitSum(b1,k1,b2,k2)}");
-Console.WriteLine();
+
 
 (double, double) GitSum(double b1, double k1, double b2, double k2)
 {
@@ -207,3 +209,27 @@ Console.WriteLine();
 
 //        b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5, -0,5)
 
+// Доп задача: ------------------------------------------------------------------------
+//Найти произведение всех элементов массива целых чисел, 
+//меньших заданного числа. Размерность массива –10. 
+//Заполнение массива осуществить случайными числами от 50 до 100.
+
+int[] myArray = GitArray(10,50,101);
+Console.Write("Введите число ограничения от 50 до 100:  ");
+int n = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine($"Произведение всех чисел в массиве -> [{String.Join(" , ", myArray)}]\n до числа {n} ==-> {MultiplyNumber(myArray, n)}");
+
+long MultiplyNumber(int[]array, int x)
+{
+    long sum = 1;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] < x) sum *= array[i];
+    }
+    return sum;
+}
+
+// Ответ:  Введите число ограничения от 50 до 100:  85
+//         Произведение всех чисел в массиве -> [64 , 61 , 85 , 94 , 71 , 64 , 86 , 77 , 86 , 84]
+//         до числа 85 ==-> 114740871168
