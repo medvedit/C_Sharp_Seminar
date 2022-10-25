@@ -91,18 +91,18 @@ int AverageCorner (int[,] sumArray)
     int sum2 = sumArray[0, sumArray.GetLength(0) - 2] + sumArray[0, sumArray.GetLength(0) - 1] + sumArray[1, sumArray.GetLength(0) - 1];
     int sum3 = sumArray[sumArray.GetLength(1) - 2, 0] + sumArray[sumArray.GetLength(1) - 1, 0] + sumArray[sumArray.GetLength(1) - 1, 1];
     int sum4 = sumArray[sumArray.GetLength(0) - 1, sumArray.GetLength(1) - 1] + sumArray[sumArray.GetLength(0) - 1, sumArray.GetLength(1) - 2] + sumArray[sumArray.GetLength(0) - 2, sumArray.GetLength(1) - 1];
-    int corner = (sum1 + sum2 + sum3 + sum4) / 4;
+    int corner = (sum1 + sum2 + sum3 + sum4) / 12;
     return corner;
 }
 // Ответ : Введите колличество строк: 
 //         5
 //         Введите колличество столбцов: 
 //         5
-//         5 1 2 5 4 
-//         1 5 1 5 2 
-//         4 0 4 4 5 
-//         1 2 4 2 3 
-//         4 1 0 4 0 
-//         Среднее арифметическое  = 7
+//         0 3 5 1 2 
+//         0 1 5 0 1 
+//         2 5 3 1 5 
+//         3 1 3 5 4 
+//         4 4 3 1 5 
+//         Среднее арифметическое  = 2
 
 
