@@ -73,27 +73,27 @@ void PrintArray(int [,] Array)
 //         3 4 5 6 7 
 //         4 5 6 7 8  
 
-// Задача №3 в классе:__________________________________________________________
+// Задача №3 в классе:_________________________________________________________________________________________________________________________________ ВЫ ПРОСИЛИ ДОИА ЭТО РЕШИТЬ!!!____________________________________________________________________________________________________
 // Задайте двумерный массив размера m на n, инайдите среднее арифмитическое суммы углов в массиве.
 
-Console.WriteLine("Введите колличество строк: ");
-int rows = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите колличество столбцов: ");
-int columns = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
 
-int[,] array = GetArray(rows, columns, 0, 5);
-PrintArray(array);
-Console.WriteLine($"Среднее арифметическое  = {AverageCorner(array)}");
+// int[,] array = GetArray(rows, columns, 0, 5);
+// PrintArray(array);
+// Console.WriteLine($"Среднее арифметическое  = {AverageCorner(array)}");
 
-int AverageCorner (int[,] sumArray)
-{
-    int sum1 = sumArray[0,0] + sumArray[0,1] + sumArray[1,0];
-    int sum2 = sumArray[0, sumArray.GetLength(0) - 2] + sumArray[0, sumArray.GetLength(0) - 1] + sumArray[1, sumArray.GetLength(0) - 1];
-    int sum3 = sumArray[sumArray.GetLength(1) - 2, 0] + sumArray[sumArray.GetLength(1) - 1, 0] + sumArray[sumArray.GetLength(1) - 1, 1];
-    int sum4 = sumArray[sumArray.GetLength(0) - 1, sumArray.GetLength(1) - 1] + sumArray[sumArray.GetLength(0) - 1, sumArray.GetLength(1) - 2] + sumArray[sumArray.GetLength(0) - 2, sumArray.GetLength(1) - 1];
-    int corner = (sum1 + sum2 + sum3 + sum4) / 12;
-    return corner;
-}
+// int AverageCorner (int[,] sumArray)
+// {
+//     int sum1 = sumArray[0,0] + sumArray[0,1] + sumArray[1,0];
+//     int sum2 = sumArray[0, sumArray.GetLength(0) - 2] + sumArray[0, sumArray.GetLength(0) - 1] + sumArray[1, sumArray.GetLength(0) - 1];
+//     int sum3 = sumArray[sumArray.GetLength(1) - 2, 0] + sumArray[sumArray.GetLength(1) - 1, 0] + sumArray[sumArray.GetLength(1) - 1, 1];
+//     int sum4 = sumArray[sumArray.GetLength(0) - 1, sumArray.GetLength(1) - 1] + sumArray[sumArray.GetLength(0) - 1, sumArray.GetLength(1) - 2] + sumArray[sumArray.GetLength(0) - 2, sumArray.GetLength(1) - 1];
+//     int corner = (sum1 + sum2 + sum3 + sum4) / 12;
+//     return corner;
+// }
 // Ответ : Введите колличество строк: 
 //         5
 //         Введите колличество столбцов: 
@@ -106,3 +106,65 @@ int AverageCorner (int[,] sumArray)
 //         Среднее арифметическое  = 2
 
 
+
+
+// Задача 4 в классе: __________________________________________________________________________________________________________
+// Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, 
+// и замените эти элементы на их квадраты.
+
+
+
+// ПЕРВЫЙ ВАРИАНТ И ПЕЧАТЬ МАССИВА ИЗ МЕТОДА С РЕШЕНИЕМ__________
+
+// Console.WriteLine("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// int[,] array = GetArray(rows, columns, 2, 5);
+// PrintArray(array);
+// Console.WriteLine();
+// EvenIndexDegree(array);
+
+// void EvenIndexDegree(int[,]degreeArray)
+// {
+//     for (int i = 0; i < degreeArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < degreeArray.GetLength(1); j++)
+//         {
+//             if(i %2 == 0 && j %2 == 0){
+//                 degreeArray[i,j] *= degreeArray[i,j];
+//                 Console.Write($"{degreeArray[i,j]} ");
+//             }
+//             else Console.Write($"{degreeArray[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+//ВТОРОЙ РАРИАНТ И ПЕЧАТЬ ИЗ МЕТОДА PrintArray(array);, ПОСЛЕ ЗАПРОСА МЕТОДА С РЕШЕНИЕМ _____________________
+
+Console.WriteLine("Введите колличество строк: ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите колличество столбцов: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 2, 5);
+PrintArray(array);
+Console.WriteLine();
+EvenIndexDegree(array);
+PrintArray(array);
+
+
+void EvenIndexDegree(int[,]degreeArray)
+{
+    for (int i = 0; i < degreeArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < degreeArray.GetLength(1); j++)
+        {
+            if(i %2 == 0 && j %2 == 0){
+                degreeArray[i,j] *= degreeArray[i,j];
+            }
+        }
+    }
+}
