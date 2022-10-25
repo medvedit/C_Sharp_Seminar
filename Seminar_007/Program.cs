@@ -144,27 +144,58 @@ void PrintArray(int [,] Array)
 
 //ВТОРОЙ РАРИАНТ И ПЕЧАТЬ ИЗ МЕТОДА PrintArray(array);, ПОСЛЕ ЗАПРОСА МЕТОДА С РЕШЕНИЕМ _____________________
 
+// Console.WriteLine("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// int[,] array = GetArray(rows, columns, 2, 5);
+// PrintArray(array);
+// Console.WriteLine();
+// EvenIndexDegree(array);
+// PrintArray(array);
+
+
+// void EvenIndexDegree(int[,]degreeArray)
+// {
+//     for (int i = 0; i < degreeArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < degreeArray.GetLength(1); j++)
+//         {
+//             if(i %2 == 0 && j %2 == 0){
+//                 degreeArray[i,j] *= degreeArray[i,j];
+//             }
+//         }
+//     }
+// }
+
+//Задача 5 в классе___________________________________________________________________________________
+//Задайте двумерный массив. Найдите сумму элементов, 
+//находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
+
 Console.WriteLine("Введите колличество строк: ");
 int rows = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите колличество столбцов: ");
 int columns = int.Parse(Console.ReadLine()!);
 
 int[,] array = GetArray(rows, columns, 2, 5);
+Console.WriteLine();
 PrintArray(array);
 Console.WriteLine();
-EvenIndexDegree(array);
-PrintArray(array);
+Console.WriteLine($"Сумма всех элементов на  \"главной диагонали\" =  {SumOfElements(array)}");
+Console.WriteLine();
 
 
-void EvenIndexDegree(int[,]degreeArray)
+int SumOfElements(int[,]sumElementsArray)
 {
-    for (int i = 0; i < degreeArray.GetLength(0); i++)
+    int sum = 0;
+    for (int i = 0; i < sumElementsArray.GetLength(0); i++)
     {
-        for (int j = 0; j < degreeArray.GetLength(1); j++)
+        for (int j = 0; j < sumElementsArray.GetLength(1); j++)
         {
-            if(i %2 == 0 && j %2 == 0){
-                degreeArray[i,j] *= degreeArray[i,j];
+            if(i == j){
+                sum = sum + sumElementsArray[i,j];
             }
         }
-    }
+    }return sum;
 }
