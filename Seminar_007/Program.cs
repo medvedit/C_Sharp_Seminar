@@ -201,7 +201,7 @@
 // }
 
 
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------ДОМАШНЯЯ РАБОТА--------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------ДОМАШНЯЯ РАБОТА------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 // Задача 47: -------------------------------------------------------------------------------
@@ -211,40 +211,40 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-Console.WriteLine("Введите колличество строк: ");
-int rows = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите колличество столбцов: ");
-int columns = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
 
-double[,] array = GetArray(rows, columns);
-PrintArray(array);
+// double[,] array = GetArray(rows, columns);
+// PrintArray(array);
 
 
-double[,] GetArray (int m, int n)
-{
-    Random rnd = new Random();
-    double[,] result = new double[m,n];
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            result[i,j] = Convert.ToDouble(rnd.Next(-100, 100)/ 10.0);
-        }
-    }
-    return result;
-}
+// double[,] GetArray (int m, int n)
+// {
+//     Random rnd = new Random();
+//     double[,] result = new double[m,n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i,j] = Convert.ToDouble(rnd.Next(-100, 100)/ 10.0);
+//         }
+//     }
+//     return result;
+// }
 
-void PrintArray(double [,] Array)
-{
-    for (int i = 0; i < Array.GetLength(0); i++) 
-    {
-        for (int j = 0; j < Array.GetLength(1); j++) 
-        {
-            Console.Write($"{Array[i,j]} ");
-        }
-        Console.WriteLine();
-    }
-}
+// void PrintArray(double [,] Array)
+// {
+//     for (int i = 0; i < Array.GetLength(0); i++) 
+//     {
+//         for (int j = 0; j < Array.GetLength(1); j++) 
+//         {
+//             Console.Write($"{Array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
 // Ответ: Введите колличество строк: 
 //        3
 //        Введите колличество столбцов: 
@@ -256,3 +256,88 @@ void PrintArray(double [,] Array)
 
 
 
+// Задача 50 :------------------------------------------------------------------------------------
+// Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// i = 4, j = 2 -> такого числа в массиве нет
+// i = 1, j = 2 -> 2
+
+
+
+
+Console.Write("Введите колличество строк:  ");
+int rows2 = int.Parse(Console.ReadLine()!);
+Console.Write("Введите колличество столбцов:  ");
+int columns2 = int.Parse(Console.ReadLine()!);
+
+int[,] array2 = GetArray2(rows2, columns2, 0, 50);
+PrintArray2(array2);
+
+Console.Write("Введите номер в строке:  ");
+int i = int.Parse(Console.ReadLine()!);
+Console.Write("Введите номер в столбце:  ");
+int j = int.Parse(Console.ReadLine()!);
+
+ValueElementPosition(array2, i, j);
+
+
+void ValueElementPosition(int[,]arr, int a, int b)
+{
+    if(a > arr.GetLength(0) || b > arr.GetLength(1))
+    {
+        Console.WriteLine($"i = {a}, j = {b} -> Такого числа в массиве нет");
+    }
+    if(a == i && b == j)
+    {
+        Console.WriteLine($"i = {a}, j = {b} -> {arr[a, b]}");
+    }
+}
+
+
+
+
+
+
+
+
+
+int [,] GetArray2 (int m, int n, int minValue, int maxValue)
+{
+    int [,] result = new int[m,n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray2(int [,] Array)
+{
+    for (int i = 0; i < Array.GetLength(0); i++) 
+    {
+        for (int j = 0; j < Array.GetLength(1); j++) 
+        {
+            Console.Write($"{Array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+    
+}
+
+// Ответ: Введите колличество строк:  5
+//        Введите колличество столбцов:  5
+//        44 50 36 30 3 
+//        1 17 2 15 28 
+//        5 43 12 1 34 
+//        26 11 10 48 18 
+//        4 7 47 28 45 
+//        Введите номер в строке:  2         // Введите номер в строке:  6
+//        Введите номер в столбце:  3        // Введите номер в столбце:  0
+//        i = 2, j = 3 -> 1                  // i = 6, j = 0 -> Такого числа в массиве нет
