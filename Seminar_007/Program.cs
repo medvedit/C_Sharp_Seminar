@@ -211,40 +211,40 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-// Console.WriteLine("Введите колличество строк: ");
-// int rows = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите колличество столбцов: ");
-// int columns = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите колличество строк: ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите колличество столбцов: ");
+int columns = int.Parse(Console.ReadLine()!);
 
-// double[,] array = GetArray(rows, columns);
-// PrintArray(array);
+double[,] array = GetArray(rows, columns);
+PrintArray(array);
 
 
-// double[,] GetArray (int m, int n)
-// {
-//     Random rnd = new Random();
-//     double[,] result = new double[m,n];
-//     for (int i = 0; i < m; i++)
-//     {
-//         for (int j = 0; j < n; j++)
-//         {
-//             result[i,j] = Convert.ToDouble(rnd.Next(-100, 100)/ 10.0);
-//         }
-//     }
-//     return result;
-// }
+double[,] GetArray (int m, int n)
+{
+    Random rnd = new Random();
+    double[,] result = new double[m,n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            result[i,j] = Convert.ToDouble(rnd.Next(-100, 100)/ 10.0);
+        }
+    }
+    return result;
+}
 
-// void PrintArray(double [,] Array)
-// {
-//     for (int i = 0; i < Array.GetLength(0); i++) 
-//     {
-//         for (int j = 0; j < Array.GetLength(1); j++) 
-//         {
-//             Console.Write($"{Array[i,j]} ");
-//         }
-//         Console.WriteLine();
-//     }
-// }
+void PrintArray(double [,] Array)
+{
+    for (int i = 0; i < Array.GetLength(0); i++) 
+    {
+        for (int j = 0; j < Array.GetLength(1); j++) 
+        {
+            Console.Write($"{Array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
 // Ответ: Введите колличество строк: 
 //        3
 //        Введите колличество столбцов: 
@@ -299,12 +299,6 @@ void ValueElementPosition(int[,]arr, int a, int b)
 
 
 
-
-
-
-
-
-
 int [,] GetArray2 (int m, int n, int minValue, int maxValue)
 {
     int [,] result = new int[m,n];
@@ -341,3 +335,84 @@ void PrintArray2(int [,] Array)
 //        Введите номер в строке:  2         // Введите номер в строке:  6
 //        Введите номер в столбце:  3        // Введите номер в столбце:  0
 //        i = 2, j = 3 -> 1                  // i = 6, j = 0 -> Такого числа в массиве нет
+
+
+// Задача 52: ________________________________________________________________________________________________________ 
+// Задайте двумерный массив из целых чисел. 
+// Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+
+Console.WriteLine("Введите колличество строк: ");
+int rows3 = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите колличество столбцов: ");
+int columns3 = int.Parse(Console.ReadLine()!);
+Console.WriteLine();
+
+
+int[,] array3 = GetArray3(rows3, columns3, 10, 99);
+PrintArray3(array3);
+ArithmeticalMeanColums(array3);
+
+
+void ArithmeticalMeanColums(int[,]array)
+{
+    double[] meanColumns = new double[array.GetLength(1)];
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        double sumColumns = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sumColumns += array[i, j];
+        }
+        meanColumns[j] = Math.Round(sumColumns / array.GetLength(0), 1);
+    }
+    Console.WriteLine();
+    Console.WriteLine($"Среднее арифметическое каждого столбца: {string.Join("; ",meanColumns)}");
+    Console.WriteLine();
+}
+
+
+int [,] GetArray3 (int m, int n, int minValue, int maxValue)
+{
+    int [,] result = new int[m,n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+
+void PrintArray3(int [,] Array3)
+{
+    for (int i = 0; i < Array3.GetLength(0); i++) 
+    {
+        for (int j = 0; j < Array3.GetLength(1); j++) 
+        {
+            Console.Write($"{Array3[i,j]}  ");
+        }
+        Console.WriteLine();
+    }
+    
+}
+// Ответ: Введите колличество строк: 
+//        5
+//        Введите колличество столбцов: 
+//        7
+
+//        84  69  32  89  51  38  93  
+//        86  91  34  94  48  10  94  
+//        10  53  43  49  52  53  20  
+//        44  55  51  72  17  77  73  
+//        61  57  87  72  19  22  70  
+
+//        Среднее арифметическое каждого столбца: 57; 65; 49,4; 75,2; 37,4; 40; 70
+
