@@ -68,7 +68,7 @@
 // // Задача 55:___________________________________________________________________________________________________________________
 // //Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы.
 // // В случае, если это невозможно, программа должна вывести сообщение для пользователя.
-//ПРЕРВЙ ВАРИАНТ РЕШЕНИЯ==================================================
+// //ПРЕРВЙ ВАРИАНТ РЕШЕНИЯ=============================================================================================
 // Console.Write("Введите колличество строк: ");
 // int rows = int.Parse(Console.ReadLine()!);
 
@@ -135,32 +135,94 @@
 // //                                                                      //43 33 41 18
 // //                                                                      //25 34 43 36
 
-//ВТОРОЙ ВАРИАЕТ РЕШЕНИЯ==========================================
+// //ВТОРОЙ ВАРИАЕТ РЕШЕНИЯ====================================================================================================
+// Console.Write("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// Console.Write("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+
+// int[,] array = GetArray(rows, columns, 10, 50);
+// PrintArray(array);
+// Console.WriteLine();
+
+// if(array.GetLength(0) == array.GetLength(1))
+// {
+//     ChangeRowsToColumns(array);
+// }
+// else Console.WriteLine($"Колличество строк -> {rows} не ровно колличеству солбцов -> {columns}");
+
+// void ChangeRowsToColumns(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             Console.Write($"{arr[j,i]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int[,] GetArray(int m, int n, int minValue, int maxValue)
+// {
+//     int[,] result = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+
+// void PrintArray(int[,] Array)
+// {
+//     for (int i = 0; i < Array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < Array.GetLength(1); j++)
+//         {
+//             Console.Write($"{Array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+//================================================================================ДОМАШНЯЯ РАБОТА===============================================================================================================
+
+//Задача 59:____________________________________________________________________________________________________________________
+// Отсортировать нечетные столбцы массива по возрастанию. 
+//Вывести массив изначальный и массив с отсортированными нечетными столбцами
+
 Console.Write("Введите колличество строк: ");
 int rows = int.Parse(Console.ReadLine()!);
-
 Console.Write("Введите колличество столбцов: ");
 int columns = int.Parse(Console.ReadLine()!);
-
 int[,] array = GetArray(rows, columns, 10, 50);
+
 PrintArray(array);
 Console.WriteLine();
+SortingEvenColumns(array);
+PrintArray(array);
 
-if(array.GetLength(0) == array.GetLength(1))
+void SortingEvenColumns(int[,] arr)
 {
-    ChangeRowsToColumns(array);
-}
-else Console.WriteLine($"Колличество строк -> {rows} не ровно колличеству солбцов -> {columns}");
-
-void ChangeRowsToColumns(int[,] arr)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
+    for (int j = 1; j < arr.GetLength(1); j += 2)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int i = 0; i < arr.GetLength(0); i++)
         {
-            Console.Write($"{arr[j,i]} ");
+            for (int k = 0; k < arr.GetLength(0); k++)
+            {
+                if (arr[i, j] < arr[k, j])
+                {
+                    int temp = arr[k, j];
+                    arr[k, j] = arr[i, j];
+                    arr[i, j] = temp;
+                }
+            }
         }
-        Console.WriteLine();
     }
 }
 
@@ -188,3 +250,15 @@ void PrintArray(int[,] Array)
         Console.WriteLine();
     }
 }
+//Ответ: Введите колличество строк: 4
+//       Введите колличество столбцов: 4
+//       11 31 17 50 
+//       23 36 10 47 
+//       41 19 30 37 
+//       22 47 18 34 
+
+//       11 19 17 34 
+//       23 31 10 37 
+//       41 36 30 47 
+//       22 47 18 50 
+
