@@ -158,7 +158,7 @@ void ChangeRowsToColumns(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write($"{arr[j,i]}  ");
+            Console.Write($"{arr[j,i]} ");
         }
         Console.WriteLine();
     }
@@ -183,7 +183,7 @@ void PrintArray(int[,] Array)
     {
         for (int j = 0; j < Array.GetLength(1); j++)
         {
-            Console.Write($"{Array[i, j]}  ");
+            Console.Write($"{Array[i, j]} ");
         }
         Console.WriteLine();
     }
