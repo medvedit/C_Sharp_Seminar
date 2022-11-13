@@ -192,73 +192,144 @@
 
 //================================================================================ДОМАШНЯЯ РАБОТА===============================================================================================================
 
-//Задача 59:____________________________________________________________________________________________________________________
-// Отсортировать нечетные столбцы массива по возрастанию. 
-//Вывести массив изначальный и массив с отсортированными нечетными столбцами
+// //Задача 59:____________________________________________________________________________________________________________________
+// // Отсортировать нечетные столбцы массива по возрастанию. 
+// //Вывести массив изначальный и массив с отсортированными нечетными столбцами
 
-Console.Write("Введите колличество строк: ");
-int rows = int.Parse(Console.ReadLine()!);
-Console.Write("Введите колличество столбцов: ");
-int columns = int.Parse(Console.ReadLine()!);
-int[,] array = GetArray(rows, columns, 10, 50);
+// Console.Write("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows, columns, 10, 50);
 
-PrintArray(array);
-Console.WriteLine();
-SortingEvenColumns(array);
-PrintArray(array);
+// PrintArray(array);
+// Console.WriteLine();
+// SortingEvenColumns(array);
+// PrintArray(array);
 
-void SortingEvenColumns(int[,] arr)
-{
-    for (int j = 1; j < arr.GetLength(1); j += 2)
-    {
-        for (int i = 0; i < arr.GetLength(0); i++)
-        {
-            for (int k = 0; k < arr.GetLength(0); k++)
-            {
-                if (arr[i, j] < arr[k, j])
-                {
-                    int temp = arr[k, j];
-                    arr[k, j] = arr[i, j];
-                    arr[i, j] = temp;
-                }
-            }
-        }
-    }
-}
+// void SortingEvenColumns(int[,] arr)
+// {
+//     for (int j = 1; j < arr.GetLength(1); j += 2)
+//     {
+//         for (int i = 0; i < arr.GetLength(0); i++)
+//         {
+//             for (int k = 0; k < arr.GetLength(0); k++)
+//             {
+//                 if (arr[i, j] < arr[k, j])
+//                 {
+//                     int temp = arr[k, j];
+//                     arr[k, j] = arr[i, j];
+//                     arr[i, j] = temp;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
-{
-    int[,] result = new int[m, n];
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            result[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
-    }
-    return result;
-}
+// int[,] GetArray(int m, int n, int minValue, int maxValue)
+// {
+//     int[,] result = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
 
-void PrintArray(int[,] Array)
-{
-    for (int i = 0; i < Array.GetLength(0); i++)
-    {
-        for (int j = 0; j < Array.GetLength(1); j++)
-        {
-            Console.Write($"{Array[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
-//Ответ: Введите колличество строк: 4
-//       Введите колличество столбцов: 4
-//       11 31 17 50 
-//       23 36 10 47 
-//       41 19 30 37 
-//       22 47 18 34 
+// void PrintArray(int[,] Array)
+// {
+//     for (int i = 0; i < Array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < Array.GetLength(1); j++)
+//         {
+//             Console.Write($"{Array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// //Ответ: Введите колличество строк: 4
+// //       Введите колличество столбцов: 4
+// //       11 31 17 50 
+// //       23 36 10 47 
+// //       41 19 30 37 
+// //       22 47 18 34 
 
-//       11 19 17 34 
-//       23 31 10 37 
-//       41 36 30 47 
-//       22 47 18 50 
+// //       11 19 17 34 
+// //       23 31 10 37 
+// //       41 36 30 47 
+// //       22 47 18 50 
+
+// //Задача 54:_____________________________________________________________________________________________________________________
+// //Задайте двумерный массив. 
+// //Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+// Console.Write("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows, columns, 10, 50);
+
+// PrintArray(array);
+// Console.WriteLine();
+// SortingEvenRows(array);
+// PrintArray(array);
+
+// void SortingEvenRows(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < arr.GetLength(1); k++)
+//             {
+//                 if (arr[i, k] < arr[i, j])
+//                 {
+//                     int temp = arr[i, j];
+//                     arr[i, j] = arr[i, k];
+//                     arr[i, k] = temp;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// int[,] GetArray(int m, int n, int minValue, int maxValue)
+// {
+//     int[,] result = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+
+// void PrintArray(int[,] Array)
+// {
+//     for (int i = 0; i < Array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < Array.GetLength(1); j++)
+//         {
+//             Console.Write($"{Array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// // Ответ: Введите колличество строк: 5
+// //        Введите колличество столбцов: 5
+// //        37 34 26 22 50 
+// //        13 10 41 35 36 
+// //        38 30 36 47 37 
+// //        30 33 27 50 47 
+// //        24 17 19 42 29 
+
+// //        50 37 34 26 22 
+// //        41 36 35 13 10 
+// //        47 38 37 36 30 
+// //        50 47 33 30 27 
+// //        42 29 24 19 17 
 
