@@ -562,3 +562,82 @@ void GetArray(int[,,] arr)
 //       74(0,1,0) 36(1,1,0) 
 //       48(0,1,1) 53(1,1,1) 
 
+// ЕЩЁ ВАРИАНТ РЕШЕНИЯ ==================================================================================================
+
+Console.WriteLine();
+Console.Write("Введите размеры массива, ЧЕРЕЗ ПРОБЕЛ: ");
+string[] nums = Console.ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries); //StringSplitOptions.RemoveEmptyEntries позволяет считать цифры из строки ввода, исключив пробелы меду цыфрами.
+int[,,] array1 = GetArray1(new int[] { int.Parse(nums[0]), int.Parse(nums[1]), int.Parse(nums[2]) }, 10, 99);
+PrintArray1(array1);
+
+int[,,] GetArray1(int[] sizes, int min, int max)
+{
+    int[,,] result = new int[sizes[0], sizes[1], sizes[2]];
+    for (int i = 0; i < result.GetLength(0); i++)
+    {
+        for (int j = 0; j < result.GetLength(1); j++)
+        {
+            int k = 0;
+            while (k < result.GetLength(2))
+            {
+                int element = new Random().Next(min, max + 1);
+                if (FindElement(result, element)) continue;
+                result[i, j, k] = element;
+                k++;
+            }
+        }
+    }
+    return result;
+}
+
+bool FindElement(int[,,] Array1, int elementRandom)
+{
+    for (int i = 0; i < Array1.GetLength(0); i++)
+    {
+        for (int j = 0; j < Array1.GetLength(1); j++)
+        {
+            for (int k = 0; k < Array1.GetLength(2); k++)
+            {
+                if (Array1[i, j, k] == elementRandom) return true;
+            }
+        }
+    }
+    return false;
+}
+
+void PrintArray1(int[,,] Array1)
+{
+    for (int i = 0; i < Array1.GetLength(0); i++)
+    {
+        for (int j = 0; j < Array1.GetLength(1); j++)
+        {
+            for (int k = 0; k < Array1.GetLength(2); k++)
+            {
+                Console.Write($"{Array1[i, j, k]}({k},{i},{j})  ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+}
+// Ответ: Введите размеры массива, ЧЕРЕЗ ПРОБЕЛ: 4 4 4
+//        30(0,0,0)  59(1,0,0)  55(2,0,0)  32(3,0,0)  
+//        33(0,0,1)  52(1,0,1)  17(2,0,1)  23(3,0,1)  
+//        60(0,0,2)  70(1,0,2)  65(2,0,2)  27(3,0,2)  
+//        84(0,0,3)  43(1,0,3)  93(2,0,3)  63(3,0,3)  
+
+//        53(0,1,0)  45(1,1,0)  77(2,1,0)  68(3,1,0)  
+//        50(0,1,1)  37(1,1,1)  42(2,1,1)  29(3,1,1)  
+//        14(0,1,2)  28(1,1,2)  47(2,1,2)  72(3,1,2)  
+//        46(0,1,3)  21(1,1,3)  39(2,1,3)  85(3,1,3)  
+
+//        26(0,2,0)  58(1,2,0)  73(2,2,0)  96(3,2,0)  
+//        89(0,2,1)  88(1,2,1)  64(2,2,1)  98(3,2,1)  
+//        90(0,2,2)  34(1,2,2)  36(2,2,2)  18(3,2,2)  
+//        61(0,2,3)  49(1,2,3)  48(2,2,3)  11(3,2,3)  
+
+//        41(0,3,0)  74(1,3,0)  15(2,3,0)  62(3,3,0)  
+//        87(0,3,1)  12(1,3,1)  95(2,3,1)  13(3,3,1)  
+//        20(0,3,2)  91(1,3,2)  57(2,3,2)  40(3,3,2)  
+//        35(0,3,3)  79(1,3,3)  22(2,3,3)  54(3,3,3)  
+
