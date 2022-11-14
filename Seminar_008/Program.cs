@@ -479,165 +479,214 @@
 // //        28  -56  
 // //         1  49  
 
-// Задача 60.___________________________________________________________________________________________________________________
-// Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, 
-// которая будет построчно выводить массив, добавляя индексы каждого элемента.
-// Массив размером 2 x 2 x 2
-// 66(0,0,0) 25(0,1,0)
-// 34(1,0,0) 41(1,1,0)
-// 27(0,0,1) 90(0,1,1)
-// 26(1,0,1) 55(1,1,1)
+// // Задача 60.___________________________________________________________________________________________________________________
+// // Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, 
+// // которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// // Массив размером 2 x 2 x 2
+// // 66(0,0,0) 25(0,1,0)
+// // 34(1,0,0) 41(1,1,0)
+// // 27(0,0,1) 90(0,1,1)
+// // 26(1,0,1) 55(1,1,1)
 
-// Один из вариантов решения ========================================================================================
-Console.Write("Введите колличество строк: ");
-int rows = int.Parse(Console.ReadLine()!);
-Console.Write("Введите колличество столбцов: ");
-int columns = int.Parse(Console.ReadLine()!);
-Console.Write("Введите размер глубины: ");
-int depth = int.Parse(Console.ReadLine()!);
-Console.WriteLine();
-int[,,] array = new int[rows, columns, depth];
+// // Один из вариантов решения ========================================================================================
+// Console.Write("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите размер глубины: ");
+// int depth = int.Parse(Console.ReadLine()!);
+// Console.WriteLine();
+// int[,,] array = new int[rows, columns, depth];
 
-GetArray(array);
-PrintArray(array);
+// GetArray(array);
+// PrintArray(array);
 
-void PrintArray(int[,,] Array)
+// void PrintArray(int[,,] Array)
+// {
+//     for (int i = 0; i < Array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < Array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < Array.GetLength(2); k++)
+//             {
+//                 Console.Write($"{Array[i, j, k]}({k},{i},{j}) ");
+//             }
+//             Console.WriteLine();
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void GetArray(int[,,] arr)
+// {
+//     int[] temp = new int[arr.GetLength(0) * arr.GetLength(1) * arr.GetLength(2)];
+//     int number;
+//     for (int i = 0; i < temp.GetLength(0); i++)
+//     {
+//         temp[i] = new Random().Next(10, 100);
+//         number = temp[i];
+//         if (i >= 1)
+//         {
+//             for (int j = 0; j < i; j++)
+//             {
+//                 while (temp[i] == temp[j])
+//                 {
+//                     temp[i] = new Random().Next(10, 100);
+//                     j = 0;
+//                     number = temp[i];
+//                 }
+//                 number = temp[i];
+//             }
+//         }
+//     }
+//     int count = 0;
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < arr.GetLength(2); k++)
+//             {
+//                 arr[i, j, k] = temp[count];
+//                 count++;
+//             }
+//         }
+//     }
+// }
+// // Ответ: Введите колличество строк: 2
+// //        Введите колличество столбцов: 2
+// //        Введите размер глубины: 2
+
+// //        67(0,0,0) 85(1,0,0) 
+// //        22(0,0,1) 51(1,0,1) 
+
+// //       74(0,1,0) 36(1,1,0) 
+// //       48(0,1,1) 53(1,1,1) 
+
+// // ЕЩЁ ВАРИАНТ РЕШЕНИЯ ==================================================================================================
+
+// Console.WriteLine();
+// Console.Write("Введите размеры массива, ЧЕРЕЗ ПРОБЕЛ: ");
+// string[] nums = Console.ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries); //StringSplitOptions.RemoveEmptyEntries позволяет считать цифры из строки ввода, исключив пробелы меду цыфрами.
+// int[,,] array1 = GetArray1(new int[] { int.Parse(nums[0]), int.Parse(nums[1]), int.Parse(nums[2]) }, 10, 99);
+// PrintArray1(array1);
+
+// int[,,] GetArray1(int[] sizes, int min, int max)
+// {
+//     int[,,] result = new int[sizes[0], sizes[1], sizes[2]];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             int k = 0;
+//             while (k < result.GetLength(2))
+//             {
+//                 int element = new Random().Next(min, max + 1);
+//                 if (FindElement(result, element)) continue;
+//                 result[i, j, k] = element;
+//                 k++;
+//             }
+//         }
+//     }
+//     return result;
+// }
+
+// bool FindElement(int[,,] Array1, int elementRandom)
+// {
+//     for (int i = 0; i < Array1.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < Array1.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < Array1.GetLength(2); k++)
+//             {
+//                 if (Array1[i, j, k] == elementRandom) return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
+
+// void PrintArray1(int[,,] Array1)
+// {
+//     for (int i = 0; i < Array1.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < Array1.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < Array1.GetLength(2); k++)
+//             {
+//                 Console.Write($"{Array1[i, j, k]}({k},{i},{j})  ");
+//             }
+//             Console.WriteLine();
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// // Ответ: Введите размеры массива, ЧЕРЕЗ ПРОБЕЛ: 4 4 4
+// //        30(0,0,0)  59(1,0,0)  55(2,0,0)  32(3,0,0)  
+// //        33(0,0,1)  52(1,0,1)  17(2,0,1)  23(3,0,1)  
+// //        60(0,0,2)  70(1,0,2)  65(2,0,2)  27(3,0,2)  
+// //        84(0,0,3)  43(1,0,3)  93(2,0,3)  63(3,0,3)  
+
+// //        53(0,1,0)  45(1,1,0)  77(2,1,0)  68(3,1,0)  
+// //        50(0,1,1)  37(1,1,1)  42(2,1,1)  29(3,1,1)  
+// //        14(0,1,2)  28(1,1,2)  47(2,1,2)  72(3,1,2)  
+// //        46(0,1,3)  21(1,1,3)  39(2,1,3)  85(3,1,3)  
+
+// //        26(0,2,0)  58(1,2,0)  73(2,2,0)  96(3,2,0)  
+// //        89(0,2,1)  88(1,2,1)  64(2,2,1)  98(3,2,1)  
+// //        90(0,2,2)  34(1,2,2)  36(2,2,2)  18(3,2,2)  
+// //        61(0,2,3)  49(1,2,3)  48(2,2,3)  11(3,2,3)  
+
+// //        41(0,3,0)  74(1,3,0)  15(2,3,0)  62(3,3,0)  
+// //        87(0,3,1)  12(1,3,1)  95(2,3,1)  13(3,3,1)  
+// //        20(0,3,2)  91(1,3,2)  57(2,3,2)  40(3,3,2)  
+// //        35(0,3,3)  79(1,3,3)  22(2,3,3)  54(3,3,3)  
+
+
+
+// Задача 62:__________________________________________________________________________________________________________________
+// Напишите программу, которая заполнит спирально массив 4 на 4. 
+
+int n = 4;
+int[,] spiralMatrix = new int[n, n];
+
+int step = 1;
+int i = 0;
+int j = 0;
+
+while (step <= spiralMatrix.GetLength(0) * spiralMatrix.GetLength(1))
 {
-    for (int i = 0; i < Array.GetLength(0); i++)
+    spiralMatrix[i, j] = step;
+    step++;
+    if (i <= j + 1 && i + j < spiralMatrix.GetLength(1) - 1)
+        j++;
+    else if (i < j && i + j >= spiralMatrix.GetLength(0) - 1)
+        i++;
+    else if (i >= j && i + j > spiralMatrix.GetLength(1) - 1)
+        j--;
+    else
+        i--;
+}
+
+Console.WriteLine();
+PrintArray(spiralMatrix);
+Console.WriteLine();
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < Array.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int k = 0; k < Array.GetLength(2); k++)
-            {
-                Console.Write($"{Array[i, j, k]}({k},{i},{j}) ");
-            }
-            Console.WriteLine();
+            if (array[i, j] / 10 <= 0)
+                Console.Write($"0{array[i, j]} ");
+
+            else Console.Write($"{array[i, j]} ");
         }
         Console.WriteLine();
     }
 }
-
-void GetArray(int[,,] arr)
-{
-    int[] temp = new int[arr.GetLength(0) * arr.GetLength(1) * arr.GetLength(2)];
-    int number;
-    for (int i = 0; i < temp.GetLength(0); i++)
-    {
-        temp[i] = new Random().Next(10, 100);
-        number = temp[i];
-        if (i >= 1)
-        {
-            for (int j = 0; j < i; j++)
-            {
-                while (temp[i] == temp[j])
-                {
-                    temp[i] = new Random().Next(10, 100);
-                    j = 0;
-                    number = temp[i];
-                }
-                number = temp[i];
-            }
-        }
-    }
-    int count = 0;
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            for (int k = 0; k < arr.GetLength(2); k++)
-            {
-                arr[i, j, k] = temp[count];
-                count++;
-            }
-        }
-    }
-}
-// Ответ: Введите колличество строк: 2
-//        Введите колличество столбцов: 2
-//        Введите размер глубины: 2
-
-//        67(0,0,0) 85(1,0,0) 
-//        22(0,0,1) 51(1,0,1) 
-
-//       74(0,1,0) 36(1,1,0) 
-//       48(0,1,1) 53(1,1,1) 
-
-// ЕЩЁ ВАРИАНТ РЕШЕНИЯ ==================================================================================================
-
-Console.WriteLine();
-Console.Write("Введите размеры массива, ЧЕРЕЗ ПРОБЕЛ: ");
-string[] nums = Console.ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries); //StringSplitOptions.RemoveEmptyEntries позволяет считать цифры из строки ввода, исключив пробелы меду цыфрами.
-int[,,] array1 = GetArray1(new int[] { int.Parse(nums[0]), int.Parse(nums[1]), int.Parse(nums[2]) }, 10, 99);
-PrintArray1(array1);
-
-int[,,] GetArray1(int[] sizes, int min, int max)
-{
-    int[,,] result = new int[sizes[0], sizes[1], sizes[2]];
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        for (int j = 0; j < result.GetLength(1); j++)
-        {
-            int k = 0;
-            while (k < result.GetLength(2))
-            {
-                int element = new Random().Next(min, max + 1);
-                if (FindElement(result, element)) continue;
-                result[i, j, k] = element;
-                k++;
-            }
-        }
-    }
-    return result;
-}
-
-bool FindElement(int[,,] Array1, int elementRandom)
-{
-    for (int i = 0; i < Array1.GetLength(0); i++)
-    {
-        for (int j = 0; j < Array1.GetLength(1); j++)
-        {
-            for (int k = 0; k < Array1.GetLength(2); k++)
-            {
-                if (Array1[i, j, k] == elementRandom) return true;
-            }
-        }
-    }
-    return false;
-}
-
-void PrintArray1(int[,,] Array1)
-{
-    for (int i = 0; i < Array1.GetLength(0); i++)
-    {
-        for (int j = 0; j < Array1.GetLength(1); j++)
-        {
-            for (int k = 0; k < Array1.GetLength(2); k++)
-            {
-                Console.Write($"{Array1[i, j, k]}({k},{i},{j})  ");
-            }
-            Console.WriteLine();
-        }
-        Console.WriteLine();
-    }
-}
-// Ответ: Введите размеры массива, ЧЕРЕЗ ПРОБЕЛ: 4 4 4
-//        30(0,0,0)  59(1,0,0)  55(2,0,0)  32(3,0,0)  
-//        33(0,0,1)  52(1,0,1)  17(2,0,1)  23(3,0,1)  
-//        60(0,0,2)  70(1,0,2)  65(2,0,2)  27(3,0,2)  
-//        84(0,0,3)  43(1,0,3)  93(2,0,3)  63(3,0,3)  
-
-//        53(0,1,0)  45(1,1,0)  77(2,1,0)  68(3,1,0)  
-//        50(0,1,1)  37(1,1,1)  42(2,1,1)  29(3,1,1)  
-//        14(0,1,2)  28(1,1,2)  47(2,1,2)  72(3,1,2)  
-//        46(0,1,3)  21(1,1,3)  39(2,1,3)  85(3,1,3)  
-
-//        26(0,2,0)  58(1,2,0)  73(2,2,0)  96(3,2,0)  
-//        89(0,2,1)  88(1,2,1)  64(2,2,1)  98(3,2,1)  
-//        90(0,2,2)  34(1,2,2)  36(2,2,2)  18(3,2,2)  
-//        61(0,2,3)  49(1,2,3)  48(2,2,3)  11(3,2,3)  
-
-//        41(0,3,0)  74(1,3,0)  15(2,3,0)  62(3,3,0)  
-//        87(0,3,1)  12(1,3,1)  95(2,3,1)  13(3,3,1)  
-//        20(0,3,2)  91(1,3,2)  57(2,3,2)  40(3,3,2)  
-//        35(0,3,3)  79(1,3,3)  22(2,3,3)  54(3,3,3)  
+// Ответ:  01 02 03 04 
+//         12 13 14 05 
+//         11 16 15 06 
+//         10 09 08 07 
 
