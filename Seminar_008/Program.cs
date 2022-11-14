@@ -135,7 +135,7 @@
 // //                                                                      //43 33 41 18
 // //                                                                      //25 34 43 36
 
-// //ВТОРОЙ ВАРИАЕТ РЕШЕНИЯ====================================================================================================
+// //ВТОРОЙ ВАРИАНТ РЕШЕНИЯ====================================================================================================
 // Console.Write("Введите колличество строк: ");
 // int rows = int.Parse(Console.ReadLine()!);
 
@@ -404,78 +404,161 @@
 // // Строка с наименьшей суммой - 2
 
 
-// Задача 58:__________________________________________________________________________________________________________________
-// Задайте две квадратные матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// // Задача 58:__________________________________________________________________________________________________________________
+// // Задайте две квадратные матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
+// Console.Write("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите колличество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// Console.WriteLine();
+// if(columns != rows)
+// {
+//     Console.WriteLine("Число строк должно быть равным числу столбцов");
+//     return;
+// }
+
+// int[,] arrayA = GetArray(rows, columns, -10, 10);
+// int[,]arrayB = GetArray(rows, columns, -10, 10);
+
+// PrintArray(arrayA);
+// Console.WriteLine();
+// PrintArray(arrayB);
+// Console.WriteLine();
+// PrintArray(SumMatrix(arrayA,arrayB));
+
+// int[,] SumMatrix(int[,]array1, int[,]array2)
+// {
+//     int[,]array3 = new int[array1.GetLength(0),array2.GetLength(1)];
+//     for (int i = 0; i < array1.GetLength(0); i++)
+//     {
+//        for (int j = 0; j < array2.GetLength(1); j++)
+//        {
+//             for (int k = 0; k < array1.GetLength(1); k++)
+//             {
+//                 array3[i,j] = array3[i,j] + array1[i,k] * array2[k,j];  //C[i,j] = a*C[i,j] + b*Sum(A[i,k]*B[k,j]) формула!!!
+//             }
+//        } 
+//     }
+//     return array3;
+// }
+
+// int[,] GetArray(int m, int n, int minValue, int maxValue)
+// {
+//     int[,] result = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+
+// void PrintArray(int[,] Array)
+// {
+//     for (int i = 0; i < Array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < Array.GetLength(1); j++)
+//         {
+//             Console.Write($"{Array[i, j]}  ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// // Оивет: Введите колличество строк: 2
+// //        Введите колличество столбцов: 2
+
+// //         0  -7  
+// //         -3  5  
+
+// //        -7  -3  
+// //        -4  8  
+
+// //        28  -56  
+// //         1  49  
+
+// Задача 60.___________________________________________________________________________________________________________________
+// Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, 
+// которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
+// 66(0,0,0) 25(0,1,0)
+// 34(1,0,0) 41(1,1,0)
+// 27(0,0,1) 90(0,1,1)
+// 26(1,0,1) 55(1,1,1)
+
+// Один из вариантов решения ========================================================================================
 Console.Write("Введите колличество строк: ");
 int rows = int.Parse(Console.ReadLine()!);
 Console.Write("Введите колличество столбцов: ");
 int columns = int.Parse(Console.ReadLine()!);
+Console.Write("Введите размер глубины: ");
+int depth = int.Parse(Console.ReadLine()!);
 Console.WriteLine();
-if(columns != rows)
-{
-    Console.WriteLine("Число строк должно быть равным числу столбцов");
-    return;
-}
+int[,,] array = new int[rows, columns, depth];
 
-int[,] arrayA = GetArray(rows, columns, -10, 10);
-int[,]arrayB = GetArray(rows, columns, -10, 10);
+GetArray(array);
+PrintArray(array);
 
-PrintArray(arrayA);
-Console.WriteLine();
-PrintArray(arrayB);
-Console.WriteLine();
-PrintArray(SumMatrix(arrayA,arrayB));
-
-int[,] SumMatrix(int[,]array1, int[,]array2)
-{
-    int[,]array3 = new int[array1.GetLength(0),array2.GetLength(1)];
-    for (int i = 0; i < array1.GetLength(0); i++)
-    {
-       for (int j = 0; j < array2.GetLength(1); j++)
-       {
-            for (int k = 0; k < array1.GetLength(1); k++)
-            {
-                array3[i,j] = array3[i,j] + array1[i,k] * array2[k,j];  //C[i,j] = a*C[i,j] + b*Sum(A[i,k]*B[k,j]) формула!!!
-            }
-       } 
-    }
-    return array3;
-}
-
-int[,] GetArray(int m, int n, int minValue, int maxValue)
-{
-    int[,] result = new int[m, n];
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            result[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
-    }
-    return result;
-}
-
-void PrintArray(int[,] Array)
+void PrintArray(int[,,] Array)
 {
     for (int i = 0; i < Array.GetLength(0); i++)
     {
         for (int j = 0; j < Array.GetLength(1); j++)
         {
-            Console.Write($"{Array[i, j]}  ");
+            for (int k = 0; k < Array.GetLength(2); k++)
+            {
+                Console.Write($"{Array[i, j, k]}({k},{i},{j}) ");
+            }
+            Console.WriteLine();
         }
         Console.WriteLine();
     }
 }
-// Оивет: Введите колличество строк: 2
+
+void GetArray(int[,,] arr)
+{
+    int[] temp = new int[arr.GetLength(0) * arr.GetLength(1) * arr.GetLength(2)];
+    int number;
+    for (int i = 0; i < temp.GetLength(0); i++)
+    {
+        temp[i] = new Random().Next(10, 100);
+        number = temp[i];
+        if (i >= 1)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                while (temp[i] == temp[j])
+                {
+                    temp[i] = new Random().Next(10, 100);
+                    j = 0;
+                    number = temp[i];
+                }
+                number = temp[i];
+            }
+        }
+    }
+    int count = 0;
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr.GetLength(2); k++)
+            {
+                arr[i, j, k] = temp[count];
+                count++;
+            }
+        }
+    }
+}
+// Ответ: Введите колличество строк: 2
 //        Введите колличество столбцов: 2
+//        Введите размер глубины: 2
 
-//         0  -7  
-//         -3  5  
+//        67(0,0,0) 85(1,0,0) 
+//        22(0,0,1) 51(1,0,1) 
 
-//        -7  -3  
-//        -4  8  
-
-//        28  -56  
-//         1  49  
+//       74(0,1,0) 36(1,1,0) 
+//       48(0,1,1) 53(1,1,1) 
 
