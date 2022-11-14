@@ -418,8 +418,8 @@ if(columns != rows)
     return;
 }
 
-int[,] arrayA = GetArray(rows, columns, 1, 3);
-int[,]arrayB = GetArray(rows, columns, 1, 3);
+int[,] arrayA = GetArray(rows, columns, -10, 10);
+int[,]arrayB = GetArray(rows, columns, -10, 10);
 
 PrintArray(arrayA);
 Console.WriteLine();
@@ -462,8 +462,20 @@ void PrintArray(int[,] Array)
     {
         for (int j = 0; j < Array.GetLength(1); j++)
         {
-            Console.Write($"{Array[i, j]} ");
+            Console.Write($"{Array[i, j]}  ");
         }
         Console.WriteLine();
     }
 }
+// Оивет: Введите колличество строк: 2
+//        Введите колличество столбцов: 2
+
+//         0  -7  
+//         -3  5  
+
+//        -7  -3  
+//        -4  8  
+
+//        28  -56  
+//         1  49  
+
