@@ -24,7 +24,7 @@
 // int number2 = number%100/10;
 // int number3 = number%10;
 // Console.WriteLine(number);
-// Console.WriteLine($"Получилось число{number1 + number3}, а цифру {number2} исключили.");
+// Console.WriteLine($"Получилось число {number1+number3}, а цифру {number2} исключили.");
 
 // //Задача3 в классе.--------------------------------
 // //Напишите программу, которая будет принимать на вход два числа и выводить, 
