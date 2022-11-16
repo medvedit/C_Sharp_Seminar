@@ -13,12 +13,12 @@
 Console.Write("Введите число N: ");
 int N = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine(PrintNumebs(1,N));
+Console.WriteLine(PrintNumebs(1, N));
 
 string PrintNumebs(int start, int end)
 {
-    if(start == end) return start.ToString();
-    return (start + ", " + PrintNumebs(start+1, end));
+    if (start == end) return start.ToString();
+    return (start + ", " + PrintNumebs(start + 1, end));
 }
 // Ответ: Введите число N: 5
 //        1, 2, 3, 4, 5
