@@ -10,17 +10,36 @@
 // }
 // // Ответ: 24
 
-// Задача №2________________________________________________________________________________
-// С помощью рекурсии выведите в консоль числа от 1 до N.
+// // Задача №2________________________________________________________________________________
+// // С помощью рекурсии выведите в консоль числа от 1 до N.
+// Console.Write("Введите число N: ");
+// int N = int.Parse(Console.ReadLine()!);
+
+// Console.WriteLine(PrintNumebs(1, N));
+
+// string PrintNumebs(int start, int end)
+// {
+//     if (start == end) return start.ToString();
+//     return (start + ", " + PrintNumebs(start + 1, end));
+// }
+// // Ответ: Введите число N: 5
+// //        1, 2, 3, 4, 5
+
+// Задача №65:
+// Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N с помощью рекурсии.
+Console.Write("Введите число M: ");
+int M = int.Parse(Console.ReadLine()!);
 Console.Write("Введите число N: ");
 int N = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine(PrintNumebs(1, N));
+Console.WriteLine(PrintNumebs(M, N));
 
 string PrintNumebs(int start, int end)
 {
     if (start == end) return start.ToString();
     return (start + ", " + PrintNumebs(start + 1, end));
 }
-// Ответ: Введите число N: 5
-//        1, 2, 3, 4, 5
+// Ответ: Введите число M: 4
+//        Введите число N: 8
+//        4, 5, 6, 7, 8
+
