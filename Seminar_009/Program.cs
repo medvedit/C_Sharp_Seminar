@@ -103,23 +103,46 @@
 // //        N = 7 -> "7, 6, 5, 4, 3, 2, 1"
 
 
-// Задача 66:________________________________________________________________________
-// Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+// // Задача 66:________________________________________________________________________
+// // Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+
+// Console.Write("Введите число M: ");
+// int M = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите число N: ");
+// int N = int.Parse(Console.ReadLine()!);
+// int sum = 0;
+
+// Console.WriteLine($"M = {M}; N = {N} -> {SumOfElements(M, N, sum)}");
+
+// int SumOfElements(int m, int n, int count)
+// {
+//     if (m == n) return m;
+//     return count += (m++) + SumOfElements(m, n, count);
+// }
+// // Ответ: Введите число M: 1
+// //        Введите число N: 15
+// //        M = 1; N = 15 -> 120
+
+
+
+// Задача 68:__________________________________________________________________________
+// Напишите программу вычисления функции Аккермана с помощью рекурсии.
+//  Даны два неотрицательных числа m и n.
 
 Console.Write("Введите число M: ");
 int M = int.Parse(Console.ReadLine()!);
 Console.Write("Введите число N: ");
 int N = int.Parse(Console.ReadLine()!);
-int sum = 0;
 
-Console.WriteLine($"M = {M}; N = {N} -> {SumOfElements(M, N, sum)}");
+Console.WriteLine($"M = {M}, N={N} -> A({M},{N}) = {AckermanFunction(M,N)} ");
 
-int SumOfElements(int m, int n, int count)
+int AckermanFunction(int m, int n)
 {
-    if (m == n) return m;
-    return count += (m++) + SumOfElements(m, n, count);
+  if (m == 0) return n + 1;
+  if (n == 0) return AckermanFunction(m - 1, 1);
+  return AckermanFunction(m - 1, AckermanFunction(m, n - 1));
 }
-// Ответ: Введите число M: 1
-//        Введите число N: 15
-//        M = 1; N = 15 -> 120
 
+// Ответ: Введите число M: 3
+//        Введите число N: 2
+//        M = 3, N=2 -> A(3,2) = 29
